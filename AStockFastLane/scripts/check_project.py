@@ -40,8 +40,6 @@ REQUIRED_FILES = [
     "docs/endpoint_probe_results.md",
     "docs/mvp0_release_notes.md",
     "docs/context_summary.md",
-    "reports/fast_report_latest.md",
-    "data/evidence/fast_evidence_pack_latest.json",
 ]
 
 

@@ -1,43 +1,82 @@
 # AStockFastLane
 
-AStockFastLane 是一个 A 股热点数据整理与研究辅助工具。
+AStockFastLane is a lightweight A-share public-information collection and research-assistance project.
 
-本项目当前处于 MVP0 阶段，重点是打通一条小请求量、可复跑、可审计的数据整理链路：
+The current MVP0 version focuses on a small, auditable local data chain:
 
 ```text
-东财新闻 + 巨潮公告 -> Fast Evidence Pack -> Markdown 报告
+Eastmoney news + CNInfo announcements -> Fast Evidence Pack -> Markdown report
 ```
 
 本项目仅用于数据整理和研究辅助，不构成投资建议。
 
-## MVP0 当前支持
+## Current Status
 
-- 东财全球资讯最小探针：抓取少量新闻数据并保存 raw/cache JSON。
-- 巨潮公告最小探针：抓取单只示例股票的公告元数据，不下载 PDF。
-- 多源 Fast Evidence Pack：合并新闻和公告缓存，生成统一证据 JSON。
-- Markdown 报告：从 Evidence Pack 生成 news + announcement 两类内容的研究辅助报告。
-- 一键运行脚本：按顺序执行新闻探针、公告探针、Evidence Pack、Markdown 报告。
+MVP0 has completed:
 
-## 当前不支持
+- Eastmoney global news minimal probe.
+- CNInfo announcement minimal probe.
+- Multi-source Fast Evidence Pack generation.
+- Markdown report generation with news and announcement sections.
+- One-click MVP0 pipeline runner.
 
-- 不提供投资建议。
-- 不做自动交易。
-- 不下载公告 PDF。
-- 不接入 LLM。
-- 不提供 Streamlit / Web 页面。
-- 不创建数据库。
-- 不做高频抓取或循环刷新。
-- 不做全市场批量遍历。
+## What This Project Does
 
-## 一键运行
+- Fetches a small number of public news items from one Eastmoney fast-news endpoint.
+- Fetches announcement metadata from one CNInfo announcement endpoint.
+- Saves raw and cache JSON for traceability.
+- Normalizes news and announcement items into a Fast Evidence Pack.
+- Generates a Markdown report from the latest Evidence Pack.
 
-从项目根目录运行：
+## What This Project Does Not Do
+
+- No investment advice.
+- No automatic trading.
+- No order placement or trading signals.
+- No LLM integration.
+- No Streamlit or web page.
+- No database.
+- No PDF bulk download.
+- No high-frequency crawling.
+- No full-market batch crawling.
+- No access-control bypassing.
+
+## Project Structure
+
+```text
+AStockFastLane/
+  configs/
+  data/
+    raw/
+    cache/
+    evidence/
+    manual/
+  docs/
+  reports/
+  scripts/
+    probes/
+    pipeline/
+    providers/
+    utils/
+```
+
+## Install
+
+MVP0 uses only the Python standard library. No third-party runtime dependency is required yet.
+
+```bash
+python scripts/check_project.py
+```
+
+## One-click Run
+
+Run from the project root:
 
 ```bash
 python scripts/run_mvp0_pipeline.py
 ```
 
-一键脚本会依次执行：
+The one-click runner executes:
 
 ```text
 scripts/probes/test_eastmoney_news_probe.py
@@ -46,7 +85,7 @@ scripts/pipeline/build_fast_evidence_pack.py
 scripts/pipeline/generate_fast_report.py
 ```
 
-## 单独运行各步骤
+## Run Steps Manually
 
 ```bash
 python scripts/probes/test_eastmoney_news_probe.py
@@ -55,37 +94,43 @@ python scripts/pipeline/build_fast_evidence_pack.py
 python scripts/pipeline/generate_fast_report.py
 ```
 
-项目骨架检查：
+## Output Files
 
-```bash
-python scripts/check_project.py
-```
-
-## 输出文件
-
-新闻探针：
+Probe outputs:
 
 - `data/raw/eastmoney_news_probe_YYYYMMDD.json`
 - `data/cache/eastmoney_news_probe_latest.json`
-
-公告探针：
-
 - `data/raw/cninfo_announcement_probe_YYYYMMDD.json`
 - `data/cache/cninfo_announcement_probe_latest.json`
 
-Evidence Pack：
+Evidence Pack outputs:
 
 - `data/evidence/fast_evidence_pack_YYYYMMDD.json`
 - `data/evidence/fast_evidence_pack_latest.json`
 
-Markdown 报告：
+Report outputs:
 
 - `reports/fast_report_YYYYMMDD.md`
 - `reports/fast_report_latest.md`
 
-## 核心文档
+Generated `data/` and `reports/` artifacts are ignored by Git by default.
 
-- `docs/current_progress.md`：当前任务进度。
-- `docs/endpoint_probe_results.md`：探针与流水线结果记录。
-- `docs/mvp0_release_notes.md`：MVP0 发布说明。
-- `docs/context_summary.md`：供后续开发或 `/compact` 使用的上下文摘要。
+## Documentation
+
+- `docs/current_progress.md`: project progress log.
+- `docs/endpoint_probe_results.md`: endpoint and pipeline result notes.
+- `docs/mvp0_release_notes.md`: MVP0 release notes.
+- `docs/context_summary.md`: continuation summary for future development or context compression.
+- `docs/a_stock_data_reference.md`: reference notes for the a-stock-data project.
+
+## Development Notes
+
+- Keep request volume small.
+- Use explicit timeout values for network probes.
+- Save raw/cache outputs for traceability.
+- Keep provider and pipeline changes scoped.
+- Do not add investment advice or automatic trading logic.
+
+## Suggested Next Step
+
+MVP1-001G: add an Eastmoney research-report probe.
