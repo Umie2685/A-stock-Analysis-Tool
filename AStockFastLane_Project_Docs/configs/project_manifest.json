@@ -1,0 +1,31 @@
+{
+  "project_name": "AStockFastLane",
+  "created_for": "new standalone project using a-stock-data as core reference",
+  "created_at": "2026-06-13",
+  "role_model": {
+    "user": "coordinator",
+    "chatgpt": "project manager / architect / codex task planner / acceptance reviewer",
+    "codex": "implementation agent"
+  },
+  "principles": [
+    "probe first",
+    "provider second",
+    "evidence pack third",
+    "report last",
+    "no automatic trading",
+    "no buy/sell advice",
+    "no whole-package copy of third-party code"
+  ],
+  "mvp0_tasks": [
+    "MVP0-001 initialize project skeleton",
+    "MVP0-002 record a-stock-data reference and license notes",
+    "MVP0-003 eastmoney news probe",
+    "MVP0-004 cninfo announcement probe",
+    "MVP0-005 eastmoney research report probe",
+    "MVP0-006 quote probe",
+    "MVP0-007 linking rules",
+    "MVP0-008 fast evidence pack",
+    "MVP0-009 markdown report",
+    "MVP0-010 one-click pipeline"
+  ]
+}

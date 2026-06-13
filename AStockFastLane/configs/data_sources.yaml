@@ -1,0 +1,20 @@
+project:
+  name: AStockFastLane
+  stage: MVP0-001
+
+data_sources:
+  eastmoney_news:
+    enabled: false
+    status: placeholder
+    note: "Endpoint not implemented in MVP0-001."
+
+  cninfo_announcement:
+    enabled: false
+    status: placeholder
+    note: "Endpoint not implemented in MVP0-001."
+
+  eastmoney_report:
+    enabled: false
+    status: placeholder
+    note: "Endpoint not implemented in MVP0-001."
+

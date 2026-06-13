@@ -1,0 +1,6 @@
+# AStockFastLane watchlist template
+# One symbol per line.
+# Example:
+# 600000.SH
+# 000001.SZ
+
