@@ -1,26 +1,21 @@
 {
-  "version": 1,
-  "description": "AStockFastLane MVP2 watchlist. This file controls which A-share symbols are included in batch probes.",
-  "items": [
-    {
-      "code": "688017",
-      "name": "绿的谐波",
-      "market": "SH",
-      "enabled": true,
-      "orgId": "9900041602",
-      "note": "MVP1 sample symbol; recent_candidate",
-      "tags": [
-        "hot_candidate",
-        "recent_candidate"
-      ],
-      "heat_score": 20.5,
-      "related_concepts": [
-        "机器人",
-        "固态电池"
-      ],
-      "source": "candidate_watchlist",
-      "updated_at": "2026-06-19T18:30:12+08:00"
-    },
+  "meta": {
+    "label": "watchlist_sync",
+    "created_at": "2026-06-19T18:30:12+08:00",
+    "source_file": "data/analysis/candidate_watchlist_latest.json",
+    "output_file": "config/watchlist.json",
+    "limit": 20,
+    "min_heat_score": null,
+    "candidate_count": 25,
+    "selected_count": 20,
+    "existing_watchlist_count": 1,
+    "final_watchlist_count": 20,
+    "added_count": 19,
+    "skipped_existing_count": 1,
+    "skipped_invalid_count": 0,
+    "backup_file": "config/watchlist.json.bak.20260619183012"
+  },
+  "added": [
     {
       "code": "601899",
       "name": "紫金矿业",
@@ -368,5 +363,15 @@
       ],
       "updated_at": "2026-06-19T18:30:12+08:00"
     }
-  ]
+  ],
+  "skipped_existing": [
+    {
+      "code": "688017",
+      "name": "绿的谐波",
+      "market": "SH"
+    }
+  ],
+  "skipped_invalid": [],
+  "backup_file": "config/watchlist.json.bak.20260619183012",
+  "created_at": "2026-06-19T18:30:12+08:00"
 }

@@ -17,16 +17,29 @@ HOT_EVENTS_JSON_PATH = PROJECT_ROOT / "data" / "analysis" / "hot_events_latest.j
 HOT_EVENTS_MD_PATH = PROJECT_ROOT / "reports" / "hot_events_latest.md"
 CANDIDATE_WATCHLIST_JSON_PATH = PROJECT_ROOT / "data" / "analysis" / "candidate_watchlist_latest.json"
 CANDIDATE_WATCHLIST_MD_PATH = PROJECT_ROOT / "reports" / "candidate_watchlist_latest.md"
+TREND_ANALYSIS_JSON_PATH = PROJECT_ROOT / "data" / "analysis" / "trend_analysis_latest.json"
+TREND_ANALYSIS_MD_PATH = PROJECT_ROOT / "reports" / "trend_analysis_latest.md"
 FAST_REPORT_PATH = PROJECT_ROOT / "reports" / "fast_report_latest.md"
 HEALTH_CHECK_PATHS = [
     HOT_EVENTS_JSON_PATH,
     HOT_EVENTS_MD_PATH,
     CANDIDATE_WATCHLIST_JSON_PATH,
     CANDIDATE_WATCHLIST_MD_PATH,
+    TREND_ANALYSIS_JSON_PATH,
+    TREND_ANALYSIS_MD_PATH,
     EVIDENCE_PATH,
     FAST_REPORT_PATH,
 ]
 STRENGTH_ORDER = ["high", "medium", "low", "unknown"]
+TREND_STATE_ORDER = ["strong_uptrend", "recovering", "sideways", "weakening", "overheated", "unknown"]
+TREND_STATE_LABELS = {
+    "strong_uptrend": "强势",
+    "recovering": "修复",
+    "sideways": "震荡",
+    "weakening": "走弱",
+    "overheated": "过热",
+    "unknown": "数据不足",
+}
 DISCLAIMER = "仅用于公开信息整理和研究辅助，不构成投资建议、交易建议或交易信号，不承诺任何回报。"
 
 
@@ -386,6 +399,7 @@ def render_page(title: str, body: str) -> bytes:
       <a class="button" href="/hot-events">热点分析</a>
       <a class="button" href="/hot-events-report">热点报告</a>
       <a class="button" href="/candidate-watchlist">候选观察股</a>
+      <a class="button" href="/trend-analysis">短期趋势分析</a>
       <a class="button" href="/fast-report">Fast Report</a>
     </nav>
   </header>
@@ -649,6 +663,149 @@ def render_candidate_watchlist(payload: dict[str, Any] | None, error: str | None
 </section>"""
 
 
+def trend_items(payload: dict[str, Any] | None) -> list[dict[str, Any]]:
+    if not payload:
+        return []
+    items = payload.get("items", [])
+    return [item for item in items if isinstance(item, dict)] if isinstance(items, list) else []
+
+
+def normalize_trend_state(value: Any) -> str:
+    text = text_value(value)
+    return text if text in TREND_STATE_ORDER else "unknown"
+
+
+def trend_state_label(value: Any) -> str:
+    state = normalize_trend_state(value)
+    return f"{state} / {TREND_STATE_LABELS.get(state, '数据不足')}"
+
+
+def metric_value(metrics: dict[str, Any], key: str) -> str:
+    value = metrics.get(key)
+    return "-" if value in (None, "") else text_value(value)
+
+
+def render_trend_missing(error: str | None) -> str:
+    reason = error or f"missing: {relative_path(TREND_ANALYSIS_JSON_PATH)}"
+    return f"""
+<section>
+  <h2>短期趋势分析</h2>
+  <div class="warning">
+    <strong>暂未生成趋势分析数据</strong>
+    <p>{esc(reason)}</p>
+    <p>请先运行：</p>
+    <pre>python scripts/probes/test_daily_k_probe.py --limit 10
+python scripts/analysis/analyze_trends.py</pre>
+  </div>
+</section>"""
+
+
+def render_trend_overview(payload: dict[str, Any], items: list[dict[str, Any]], error: str | None) -> str:
+    meta = payload.get("meta", {})
+    if not isinstance(meta, dict):
+        meta = {}
+    counts = meta.get("state_counts", {})
+    if not isinstance(counts, dict):
+        counts = {}
+    cards = [
+        ("样本数量", meta.get("item_count", len(items))),
+        ("可分析数量", meta.get("ok_count", "-")),
+        ("数据不足", counts.get("unknown", 0)),
+        ("报告时间", meta.get("created_at", "-")),
+    ]
+    stat_html = "".join(
+        f'<div class="panel"><div class="label">{esc(label)}</div><div class="stat">{esc(value)}</div></div>'
+        for label, value in cards
+    )
+    state_rows = "".join(
+        f'<span class="pill">{esc(state)} / {esc(TREND_STATE_LABELS[state])}: {esc(counts.get(state, 0))}</span>'
+        for state in TREND_STATE_ORDER
+    )
+    warning = f'<div class="warning">warning: {esc(error)}</div>' if error else ""
+    return f"""
+<section>
+  <h2>短期趋势分析概览</h2>
+  {warning}
+  <div class="grid">{stat_html}</div>
+  <div class="event-meta">{state_rows}</div>
+  <p>数据来源：{esc(meta.get("source_file", relative_path(TREND_ANALYSIS_JSON_PATH)))}</p>
+  <p>分析方法：{esc(meta.get("method", "rule_based"))}</p>
+  <p><a href="/trend-analysis-report">打开 trend_analysis_latest.md 报告预览</a></p>
+</section>"""
+
+
+def render_trend_card(item: dict[str, Any]) -> str:
+    metrics = item.get("metrics", {})
+    if not isinstance(metrics, dict):
+        metrics = {}
+    quality = item.get("data_quality", {})
+    if not isinstance(quality, dict):
+        quality = {}
+    metric_keys = [
+        "latest_close",
+        "ma5",
+        "ma10",
+        "ma20",
+        "pct_chg_1d",
+        "pct_chg_5d",
+        "pct_chg_10d",
+        "volume_ratio_5d",
+        "drawdown_from_20d_high",
+    ]
+    metric_rows = "".join(
+        f"<tr><th>{esc(key)}</th><td>{esc(metric_value(metrics, key))}</td></tr>"
+        for key in metric_keys
+    )
+    quality_text = (
+        f"status={text_value(quality.get('status')) or '-'}; "
+        f"bar_count={text_value(quality.get('bar_count')) or '-'}; "
+        f"problems={join_values(quality.get('problems'))}"
+    )
+    return f"""
+<article class="event-card">
+  <h3>{esc(item.get("name", "-"))} {esc(item.get("code", "-"))}</h3>
+  <div class="event-meta">
+    <span class="pill">heat_score: {esc(item.get("heat_score", "-"))}</span>
+    <span class="pill">trend_state: {esc(trend_state_label(item.get("trend_state")))}</span>
+    <span class="pill">trend_score: {esc(item.get("trend_score", "-"))}</span>
+    <span class="pill">latest_trade_date: {esc(item.get("latest_trade_date", "-"))}</span>
+  </div>
+  <div class="detail-grid">
+    <div class="detail-label">market</div><div>{esc(item.get("market", "-"))}</div>
+    <div class="detail-label">related_concepts</div><div>{esc(join_values(item.get("related_concepts")))}</div>
+    <div class="detail-label">trend_reason</div><div>{esc(item.get("trend_reason", "-"))}</div>
+    <div class="detail-label">trigger_conditions</div><div>{esc(join_values(item.get("trigger_conditions")))}</div>
+    <div class="detail-label">risk_notes</div><div>{esc(join_values(item.get("risk_notes")))}</div>
+    <div class="detail-label">observation_notes</div><div>{esc(join_values(item.get("observation_notes")))}</div>
+    <div class="detail-label">data_quality</div><div>{esc(quality_text)}</div>
+  </div>
+  <h3>关键 metrics</h3>
+  <table>
+    <tbody>{metric_rows}</tbody>
+  </table>
+</article>"""
+
+
+def render_trend_analysis(payload: dict[str, Any] | None, error: str | None, compact: bool = False) -> str:
+    if not payload:
+        return render_trend_missing(error)
+    items = trend_items(payload)
+    limit = 5 if compact else 999
+    cards = "".join(render_trend_card(item) for item in items[:limit])
+    if not cards:
+        cards = '<div class="panel">暂无趋势分析条目。</div>'
+    more = ""
+    if compact and len(items) > limit:
+        more = f'<p class="muted">还有 {len(items) - limit} 个趋势分析条目，打开详情页查看。</p>'
+    return f"""
+{render_trend_overview(payload, items, error)}
+<section>
+  <h2>短期趋势分析列表</h2>
+  {cards}
+  {more}
+</section>"""
+
+
 def render_fast_report_summary(text: str, error: str | None) -> str:
     if error:
         return f'<section><h2>Fast Report</h2><p>{esc(error)}</p></section>'
@@ -666,12 +823,13 @@ def render_home() -> bytes:
     evidence_payload, evidence_error = read_json(EVIDENCE_PATH)
     hot_payload, hot_error = read_json(HOT_EVENTS_JSON_PATH)
     candidate_payload, candidate_error = read_json(CANDIDATE_WATCHLIST_JSON_PATH)
+    trend_payload, trend_error = read_json(TREND_ANALYSIS_JSON_PATH)
     report_text, report_error = read_text(FAST_REPORT_PATH, limit=5000)
 
     watchlist_items = enabled_watchlist_items(watchlist_payload)
     items = evidence_items(evidence_payload)
     news, announcements, reports = split_evidence(items)
-    errors = [error for error in (watchlist_error, evidence_error, hot_error, candidate_error, report_error) if error]
+    errors = [error for error in (watchlist_error, evidence_error, hot_error, candidate_error, trend_error, report_error) if error]
 
     body = f"""
 {render_health_warnings(errors)}
@@ -681,6 +839,7 @@ def render_home() -> bytes:
 {render_stock_evidence(announcements, reports)}
 {render_hot_events(hot_payload, hot_error, compact=True)}
 {render_candidate_watchlist(candidate_payload, candidate_error, compact=True)}
+{render_trend_analysis(trend_payload, trend_error, compact=True)}
 {render_fast_report_summary(report_text, report_error)}
 <section>
   <h2>免责声明</h2>
@@ -704,6 +863,14 @@ def render_candidate_watchlist_page() -> bytes:
     body += render_candidate_watchlist(payload, error, compact=False)
     body += f'<section><h2>免责声明</h2><p class="disclaimer">{esc(DISCLAIMER)}</p></section>'
     return render_page("候选观察股", body)
+
+
+def render_trend_analysis_page() -> bytes:
+    payload, error = read_json(TREND_ANALYSIS_JSON_PATH)
+    body = render_health_warnings([error] if error else [])
+    body += render_trend_analysis(payload, error, compact=False)
+    body += f'<section><h2>免责声明</h2><p class="disclaimer">{esc(DISCLAIMER)}</p></section>'
+    return render_page("短期趋势分析", body)
 
 
 def render_markdown_page(path: Path, title: str) -> bytes:
@@ -731,6 +898,10 @@ class DashboardHandler(BaseHTTPRequestHandler):
             self.send_html(render_candidate_watchlist_page())
         elif path in {"/candidate-watchlist-report", "/candidate-watchlist.md"}:
             self.send_html(render_markdown_page(CANDIDATE_WATCHLIST_MD_PATH, "候选观察股报告"))
+        elif path == "/trend-analysis":
+            self.send_html(render_trend_analysis_page())
+        elif path in {"/trend-analysis-report", "/trend-analysis.md"}:
+            self.send_html(render_markdown_page(TREND_ANALYSIS_MD_PATH, "短期趋势分析报告"))
         elif path == "/fast-report":
             self.send_html(render_markdown_page(FAST_REPORT_PATH, "Fast Report"))
         else:

@@ -443,3 +443,162 @@ Summary:
 Next:
 
 - Keep candidate-watchlist generation offline and auditable; future changes should treat candidates as research context only.
+
+## MVP4-001G
+
+Status: Completed
+
+Summary:
+
+- Added `docs/mvp4_market_data_schema.md` for low-frequency daily K schema planning.
+- Added `data/market/.gitkeep` and `data/market/daily_k_latest.example.json`.
+- Defined raw market fields, normalized fields, future trend-analysis fields, data-quality states, and the trend-state enum.
+- No network request, Dashboard change, trend analyzer, order-book data, high-frequency data, automatic trading, or trading output was added.
+
+Next:
+
+- Implement a minimal candidate-stock daily K probe with structured failure rows.
+
+## MVP4-002G
+
+Status: Completed
+
+Summary:
+
+- Added `scripts/probes/test_daily_k_probe.py`.
+- The probe reads `data/analysis/candidate_watchlist_latest.json`, fetches low-frequency Tencent daily K data, and writes latest plus dated JSON outputs under `data/market/`.
+- Supports `--limit`, `--days`, `--source`, and `--adjust-type`.
+- Preserves one structured result per candidate and marks unsupported market, fetch, parse, insufficient-history, and empty-bars cases without stopping the whole run.
+- No third-party dependency, order-book data, intraday data, high-frequency data, automatic trading, or trading output was added.
+
+Next:
+
+- Build an offline rule-based trend analyzer on top of `data/market/daily_k_latest.json`.
+
+## MVP4-003G
+
+Status: Completed
+
+Summary:
+
+- Added `scripts/analysis/analyze_trends.py`.
+- The analyzer reads `data/market/daily_k_latest.json`, computes MA5 / MA10 / MA20, short-window close changes, relative volume, and distance from the 20-day high.
+- Writes `data/analysis/trend_analysis_latest.json`, dated trend JSON, `reports/trend_analysis_latest.md`, and a dated Markdown report.
+- Uses only the rule-based states `strong_uptrend`, `recovering`, `sideways`, `weakening`, `overheated`, and `unknown`.
+- Keeps conclusions as trend-state context for research assistance only.
+
+Next:
+
+- Add a local Dashboard page for the generated trend-analysis output.
+
+## MVP4-004G
+
+Status: Completed
+
+Summary:
+
+- Updated `scripts/run_web_dashboard.py` with `/trend-analysis`.
+- Added `/trend-analysis-report` and `/trend-analysis.md` report-preview routes for `reports/trend_analysis_latest.md`.
+- The homepage now links to the short-term trend-analysis page and shows a compact trend-analysis module.
+- Missing or malformed trend JSON shows a friendly local-command prompt instead of crashing the service.
+- No network request, Dashboard auto-refresh, third-party dependency, order-book data, high-frequency data, automatic trading, or trading output was added.
+
+Next:
+
+- Add a one-click MVP4 pipeline that runs daily K refresh and offline trend analysis without starting the Dashboard.
+
+## MVP4-005G
+
+Status: Completed
+
+Summary:
+
+- Added `scripts/run_mvp4_pipeline.py` as the one-click MVP4 generation entry.
+- The pipeline checks `data/analysis/candidate_watchlist_latest.json`, runs `scripts/probes/test_daily_k_probe.py --limit N`, then runs `scripts/analysis/analyze_trends.py`.
+- Default candidate limit is 20; it can be changed with `--limit`.
+- It checks for `data/market/daily_k_latest.json`, `data/analysis/trend_analysis_latest.json`, and `reports/trend_analysis_latest.md`.
+- It prints daily K counts, trend-analysis counts, state counts, output paths, and the next Dashboard command.
+- Verification with `--limit 20` generated 20 daily K rows and 20 trend-analysis rows: `recovering=9`, `sideways=4`, `weakening=6`, `overheated=1`, `strong_uptrend=0`, `unknown=0`.
+- The pipeline does not start the Dashboard and does not modify MVP0-MVP3 entrypoints.
+
+Run:
+
+```bash
+python scripts/run_mvp4_pipeline.py --limit 20
+python scripts/run_web_dashboard.py
+```
+
+Dashboard pages:
+
+```text
+/trend-analysis
+/trend-analysis-report
+/trend-analysis.md
+```
+
+Boundary:
+
+- MVP4 is for public-information organization and research assistance only.
+- Trend analysis is `rule_based`.
+- It does not provide investment advice, automatic trading, order placement, order-book data, intraday data, or high-frequency data.
+
+Next:
+
+- Keep MVP4 output auditable before adding any larger data source or model layer.
+
+## MVP4-006G
+
+Status: Completed
+
+Summary:
+
+- Completed the MVP4 sealing audit and handoff pass.
+- Re-ran `python scripts/run_mvp4_pipeline.py --limit 20`.
+- Re-validated `data/market/daily_k_latest.json` and `data/analysis/trend_analysis_latest.json` with `python -m json.tool`.
+- Recompiled MVP4 and regression entrypoints, including `scripts/run_mvp2_pipeline.py`.
+- Verified Dashboard routes `/`, `/trend-analysis`, `/trend-analysis-report`, `/candidate-watchlist`, and `/hot-events-report` returned HTTP 200.
+- Added `docs/handoff_for_mvp5_new_chat.md` for the next chat.
+- No feature code, trend rule, Dashboard business logic, new data source, third-party dependency, or cleanup of untracked files was added.
+
+Audit result:
+
+```text
+daily_k item_count: 20
+daily_k ok_count: 20
+daily_k failed_count: 0
+trend_analysis item_count: 20
+trend_analysis ok_count: 20
+trend_analysis unknown_count: 0
+latest_trade_date distribution: 2026-06-18 = 20
+```
+
+Trend-state distribution:
+
+```text
+strong_uptrend: 0
+recovering: 9
+sideways: 4
+weakening: 6
+overheated: 1
+unknown: 0
+```
+
+Dashboard audit:
+
+```text
+/                          HTTP 200
+/trend-analysis            HTTP 200
+/trend-analysis-report     HTTP 200
+/candidate-watchlist       HTTP 200
+/hot-events-report         HTTP 200
+```
+
+Boundary:
+
+- MVP4 remains a public-information and rule-based research-assistance workflow.
+- It does not include automatic trading, order placement, realtime order-book data, intraday data, or high-frequency data.
+- MVP4 is ready to seal.
+
+Next:
+
+- Start MVP5 from `docs/handoff_for_mvp5_new_chat.md` with a small planning-only task.

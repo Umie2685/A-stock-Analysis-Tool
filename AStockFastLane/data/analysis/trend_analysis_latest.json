@@ -1,0 +1,974 @@
+{
+  "meta": {
+    "label": "trend_analysis",
+    "created_at": "2026-06-19T18:25:10.285817+08:00",
+    "source_file": "data/market/daily_k_latest.json",
+    "method": "rule_based",
+    "item_count": 20,
+    "ok_count": 20,
+    "unknown_count": 0,
+    "state_counts": {
+      "strong_uptrend": 0,
+      "recovering": 9,
+      "sideways": 4,
+      "weakening": 6,
+      "overheated": 1,
+      "unknown": 0
+    },
+    "disclaimer": "规则版趋势分析仅用于公开信息整理和研究辅助，不构成交易指令，不承诺任何回报。"
+  },
+  "items": [
+    {
+      "code": "601899",
+      "name": "紫金矿业",
+      "market": "SH",
+      "heat_score": 25.5,
+      "related_concepts": [
+        "有色金属"
+      ],
+      "trend_state": "weakening",
+      "trend_score": 38,
+      "trend_reason": "最近收盘价为 29.69，MA5/MA10/MA20 分别为 30.16/29.2/30.17，5 日涨跌幅为 8.64%，成交量较前 5 日均量为 1.18 倍，20 日高点距离为 -9.98%，规则判定为 weakening。",
+      "trigger_conditions": [
+        "close < ma20"
+      ],
+      "risk_notes": [
+        "短期走弱，需关注是否继续下破关键均线。"
+      ],
+      "observation_notes": [
+        "观察是否重新站回 MA10/MA20，或继续扩大回撤。"
+      ],
+      "data_quality": {
+        "status": "ok",
+        "problems": [],
+        "bar_count": 60
+      },
+      "metrics": {
+        "ma5": 30.16,
+        "ma10": 29.2,
+        "ma20": 30.17,
+        "pct_chg_1d": -2.43,
+        "pct_chg_5d": 8.64,
+        "pct_chg_10d": -2.14,
+        "volume_ratio_5d": 1.18,
+        "drawdown_from_20d_high": -9.98,
+        "distance_to_20d_high": -9.98,
+        "latest_close": 29.69,
+        "latest_volume": 3620675.0,
+        "latest_trade_date": "2026-06-18"
+      },
+      "source_daily_k_status": "ok",
+      "latest_trade_date": "2026-06-18",
+      "created_at": "2026-06-19T18:25:10.285817+08:00",
+      "label": "trend_analysis",
+      "method": "rule_based"
+    },
+    {
+      "code": "600111",
+      "name": "北方稀土",
+      "market": "SH",
+      "heat_score": 23.0,
+      "related_concepts": [
+        "有色金属"
+      ],
+      "trend_state": "sideways",
+      "trend_score": 50,
+      "trend_reason": "最近收盘价为 51.4，MA5/MA10/MA20 分别为 50.72/49.34/49.52，5 日涨跌幅为 8.16%，成交量较前 5 日均量为 2.0 倍，20 日高点距离为 -3.53%，规则判定为 sideways。",
+      "trigger_conditions": [
+        "data sufficient",
+        "no stronger trend rule matched"
+      ],
+      "risk_notes": [
+        "短期方向不明确，可能继续震荡。"
+      ],
+      "observation_notes": [
+        "观察是否出现放量突破或跌破震荡区间。"
+      ],
+      "data_quality": {
+        "status": "ok",
+        "problems": [],
+        "bar_count": 60
+      },
+      "metrics": {
+        "ma5": 50.72,
+        "ma10": 49.34,
+        "ma20": 49.52,
+        "pct_chg_1d": 2.15,
+        "pct_chg_5d": 8.16,
+        "pct_chg_10d": 3.5,
+        "volume_ratio_5d": 2.0,
+        "drawdown_from_20d_high": -3.53,
+        "distance_to_20d_high": -3.53,
+        "latest_close": 51.4,
+        "latest_volume": 1807191.0,
+        "latest_trade_date": "2026-06-18"
+      },
+      "source_daily_k_status": "ok",
+      "latest_trade_date": "2026-06-18",
+      "created_at": "2026-06-19T18:25:10.285817+08:00",
+      "label": "trend_analysis",
+      "method": "rule_based"
+    },
+    {
+      "code": "603799",
+      "name": "华友钴业",
+      "market": "SH",
+      "heat_score": 23.0,
+      "related_concepts": [
+        "有色金属"
+      ],
+      "trend_state": "recovering",
+      "trend_score": 62,
+      "trend_reason": "最近收盘价为 52.1，MA5/MA10/MA20 分别为 52.07/49.96/52.6，5 日涨跌幅为 9.61%，成交量较前 5 日均量为 1.13 倍，20 日高点距离为 -12.08%，规则判定为 recovering。",
+      "trigger_conditions": [
+        "close > ma5",
+        "ma5 >= ma10 or pct_chg_5d > 3",
+        "drawdown_from_20d_high <= -5"
+      ],
+      "risk_notes": [
+        "修复趋势可能失败，需要观察量能和均线延续性。"
+      ],
+      "observation_notes": [
+        "观察收盘价能否继续站稳短期均线，并逐步修复与 20 日高点的距离。"
+      ],
+      "data_quality": {
+        "status": "ok",
+        "problems": [],
+        "bar_count": 60
+      },
+      "metrics": {
+        "ma5": 52.07,
+        "ma10": 49.96,
+        "ma20": 52.6,
+        "pct_chg_1d": -0.93,
+        "pct_chg_5d": 9.61,
+        "pct_chg_10d": 1.56,
+        "volume_ratio_5d": 1.13,
+        "drawdown_from_20d_high": -12.08,
+        "distance_to_20d_high": -12.08,
+        "latest_close": 52.1,
+        "latest_volume": 667724.0,
+        "latest_trade_date": "2026-06-18"
+      },
+      "source_daily_k_status": "ok",
+      "latest_trade_date": "2026-06-18",
+      "created_at": "2026-06-19T18:25:10.285817+08:00",
+      "label": "trend_analysis",
+      "method": "rule_based"
+    },
+    {
+      "code": "002179",
+      "name": "中航光电",
+      "market": "SZ",
+      "heat_score": 22.5,
+      "related_concepts": [
+        "商业航天",
+        "低空经济",
+        "军工"
+      ],
+      "trend_state": "sideways",
+      "trend_score": 50,
+      "trend_reason": "最近收盘价为 40.78，MA5/MA10/MA20 分别为 38.38/37.58/37.97，5 日涨跌幅为 11.73%，成交量较前 5 日均量为 1.95 倍，20 日高点距离为 -2.67%，规则判定为 sideways。",
+      "trigger_conditions": [
+        "data sufficient",
+        "no stronger trend rule matched"
+      ],
+      "risk_notes": [
+        "短期方向不明确，可能继续震荡。"
+      ],
+      "observation_notes": [
+        "观察是否出现放量突破或跌破震荡区间。"
+      ],
+      "data_quality": {
+        "status": "ok",
+        "problems": [],
+        "bar_count": 60
+      },
+      "metrics": {
+        "ma5": 38.38,
+        "ma10": 37.58,
+        "ma20": 37.97,
+        "pct_chg_1d": 5.05,
+        "pct_chg_5d": 11.73,
+        "pct_chg_10d": 3.98,
+        "volume_ratio_5d": 1.95,
+        "drawdown_from_20d_high": -2.67,
+        "distance_to_20d_high": -2.67,
+        "latest_close": 40.78,
+        "latest_volume": 766308.0,
+        "latest_trade_date": "2026-06-18"
+      },
+      "source_daily_k_status": "ok",
+      "latest_trade_date": "2026-06-18",
+      "created_at": "2026-06-19T18:25:10.285817+08:00",
+      "label": "trend_analysis",
+      "method": "rule_based"
+    },
+    {
+      "code": "300308",
+      "name": "中际旭创",
+      "market": "SZ",
+      "heat_score": 20.5,
+      "related_concepts": [
+        "AI算力",
+        "光通信",
+        "数据中心"
+      ],
+      "trend_state": "sideways",
+      "trend_score": 50,
+      "trend_reason": "最近收盘价为 1367.88，MA5/MA10/MA20 分别为 1257.22/1207.21/1182.67，5 日涨跌幅为 21.7%，成交量较前 5 日均量为 0.82 倍，20 日高点距离为 -0.05%，规则判定为 sideways。",
+      "trigger_conditions": [
+        "data sufficient",
+        "no stronger trend rule matched"
+      ],
+      "risk_notes": [
+        "短期方向不明确，可能继续震荡。"
+      ],
+      "observation_notes": [
+        "观察是否出现放量突破或跌破震荡区间。"
+      ],
+      "data_quality": {
+        "status": "ok",
+        "problems": [],
+        "bar_count": 60
+      },
+      "metrics": {
+        "ma5": 1257.22,
+        "ma10": 1207.21,
+        "ma20": 1182.67,
+        "pct_chg_1d": 7.19,
+        "pct_chg_5d": 21.7,
+        "pct_chg_10d": 6.87,
+        "volume_ratio_5d": 0.82,
+        "drawdown_from_20d_high": -0.05,
+        "distance_to_20d_high": -0.05,
+        "latest_close": 1367.88,
+        "latest_volume": 285516.0,
+        "latest_trade_date": "2026-06-18"
+      },
+      "source_daily_k_status": "ok",
+      "latest_trade_date": "2026-06-18",
+      "created_at": "2026-06-19T18:25:10.285817+08:00",
+      "label": "trend_analysis",
+      "method": "rule_based"
+    },
+    {
+      "code": "300502",
+      "name": "新易盛",
+      "market": "SZ",
+      "heat_score": 20.5,
+      "related_concepts": [
+        "AI算力",
+        "光通信",
+        "数据中心"
+      ],
+      "trend_state": "recovering",
+      "trend_score": 62,
+      "trend_reason": "最近收盘价为 581.48，MA5/MA10/MA20 分别为 547.06/629.25/668.16，5 日涨跌幅为 10.55%，成交量较前 5 日均量为 1.03 倍，20 日高点距离为 -28.95%，规则判定为 recovering。",
+      "trigger_conditions": [
+        "close > ma5",
+        "ma5 >= ma10 or pct_chg_5d > 3",
+        "drawdown_from_20d_high <= -5"
+      ],
+      "risk_notes": [
+        "修复趋势可能失败，需要观察量能和均线延续性。"
+      ],
+      "observation_notes": [
+        "观察收盘价能否继续站稳短期均线，并逐步修复与 20 日高点的距离。"
+      ],
+      "data_quality": {
+        "status": "ok",
+        "problems": [],
+        "bar_count": 60
+      },
+      "metrics": {
+        "ma5": 547.06,
+        "ma10": 629.25,
+        "ma20": 668.16,
+        "pct_chg_1d": 4.23,
+        "pct_chg_5d": 10.55,
+        "pct_chg_10d": -25.06,
+        "volume_ratio_5d": 1.03,
+        "drawdown_from_20d_high": -28.95,
+        "distance_to_20d_high": -28.95,
+        "latest_close": 581.48,
+        "latest_volume": 428749.0,
+        "latest_trade_date": "2026-06-18"
+      },
+      "source_daily_k_status": "ok",
+      "latest_trade_date": "2026-06-18",
+      "created_at": "2026-06-19T18:25:10.285817+08:00",
+      "label": "trend_analysis",
+      "method": "rule_based"
+    },
+    {
+      "code": "688017",
+      "name": "绿的谐波",
+      "market": "SH",
+      "heat_score": 20.5,
+      "related_concepts": [
+        "机器人",
+        "固态电池"
+      ],
+      "trend_state": "recovering",
+      "trend_score": 62,
+      "trend_reason": "最近收盘价为 408.01，MA5/MA10/MA20 分别为 377.89/392.19/356.51，5 日涨跌幅为 11.17%，成交量较前 5 日均量为 0.85 倍，20 日高点距离为 -9.37%，规则判定为 recovering。",
+      "trigger_conditions": [
+        "close > ma5",
+        "ma5 >= ma10 or pct_chg_5d > 3",
+        "drawdown_from_20d_high <= -5"
+      ],
+      "risk_notes": [
+        "修复趋势可能失败，需要观察量能和均线延续性。"
+      ],
+      "observation_notes": [
+        "观察收盘价能否继续站稳短期均线，并逐步修复与 20 日高点的距离。"
+      ],
+      "data_quality": {
+        "status": "ok",
+        "problems": [],
+        "bar_count": 60
+      },
+      "metrics": {
+        "ma5": 377.89,
+        "ma10": 392.19,
+        "ma20": 356.51,
+        "pct_chg_1d": 6.92,
+        "pct_chg_5d": 11.17,
+        "pct_chg_10d": 24.58,
+        "volume_ratio_5d": 0.85,
+        "drawdown_from_20d_high": -9.37,
+        "distance_to_20d_high": -9.37,
+        "latest_close": 408.01,
+        "latest_volume": 19201616.0,
+        "latest_trade_date": "2026-06-18"
+      },
+      "source_daily_k_status": "ok",
+      "latest_trade_date": "2026-06-18",
+      "created_at": "2026-06-19T18:25:10.285817+08:00",
+      "label": "trend_analysis",
+      "method": "rule_based"
+    },
+    {
+      "code": "000977",
+      "name": "浪潮信息",
+      "market": "SZ",
+      "heat_score": 18.0,
+      "related_concepts": [
+        "AI算力",
+        "光通信",
+        "数据中心"
+      ],
+      "trend_state": "recovering",
+      "trend_score": 62,
+      "trend_reason": "最近收盘价为 65.66，MA5/MA10/MA20 分别为 62.68/61.01/63.36，5 日涨跌幅为 13.52%，成交量较前 5 日均量为 1.16 倍，20 日高点距离为 -8.84%，规则判定为 recovering。",
+      "trigger_conditions": [
+        "close > ma5",
+        "ma5 >= ma10 or pct_chg_5d > 3",
+        "drawdown_from_20d_high <= -5"
+      ],
+      "risk_notes": [
+        "修复趋势可能失败，需要观察量能和均线延续性。"
+      ],
+      "observation_notes": [
+        "观察收盘价能否继续站稳短期均线，并逐步修复与 20 日高点的距离。"
+      ],
+      "data_quality": {
+        "status": "ok",
+        "problems": [],
+        "bar_count": 60
+      },
+      "metrics": {
+        "ma5": 62.68,
+        "ma10": 61.01,
+        "ma20": 63.36,
+        "pct_chg_1d": 1.8,
+        "pct_chg_5d": 13.52,
+        "pct_chg_10d": 3.63,
+        "volume_ratio_5d": 1.16,
+        "drawdown_from_20d_high": -8.84,
+        "distance_to_20d_high": -8.84,
+        "latest_close": 65.66,
+        "latest_volume": 695477.0,
+        "latest_trade_date": "2026-06-18"
+      },
+      "source_daily_k_status": "ok",
+      "latest_trade_date": "2026-06-18",
+      "created_at": "2026-06-19T18:25:10.285817+08:00",
+      "label": "trend_analysis",
+      "method": "rule_based"
+    },
+    {
+      "code": "002050",
+      "name": "三花智控",
+      "market": "SZ",
+      "heat_score": 18.0,
+      "related_concepts": [
+        "机器人",
+        "固态电池"
+      ],
+      "trend_state": "weakening",
+      "trend_score": 38,
+      "trend_reason": "最近收盘价为 45.74，MA5/MA10/MA20 分别为 45.2/45.95/47.48，5 日涨跌幅为 0.11%，成交量较前 5 日均量为 0.88 倍，20 日高点距离为 -18.32%，规则判定为 weakening。",
+      "trigger_conditions": [
+        "close < ma20"
+      ],
+      "risk_notes": [
+        "短期走弱，需关注是否继续下破关键均线。"
+      ],
+      "observation_notes": [
+        "观察是否重新站回 MA10/MA20，或继续扩大回撤。"
+      ],
+      "data_quality": {
+        "status": "ok",
+        "problems": [],
+        "bar_count": 60
+      },
+      "metrics": {
+        "ma5": 45.2,
+        "ma10": 45.95,
+        "ma20": 47.48,
+        "pct_chg_1d": 2.56,
+        "pct_chg_5d": 0.11,
+        "pct_chg_10d": -2.7,
+        "volume_ratio_5d": 0.88,
+        "drawdown_from_20d_high": -18.32,
+        "distance_to_20d_high": -18.32,
+        "latest_close": 45.74,
+        "latest_volume": 1248589.0,
+        "latest_trade_date": "2026-06-18"
+      },
+      "source_daily_k_status": "ok",
+      "latest_trade_date": "2026-06-18",
+      "created_at": "2026-06-19T18:25:10.285817+08:00",
+      "label": "trend_analysis",
+      "method": "rule_based"
+    },
+    {
+      "code": "002085",
+      "name": "万丰奥威",
+      "market": "SZ",
+      "heat_score": 18.0,
+      "related_concepts": [
+        "商业航天",
+        "低空经济"
+      ],
+      "trend_state": "sideways",
+      "trend_score": 50,
+      "trend_reason": "最近收盘价为 12.67，MA5/MA10/MA20 分别为 13.29/12.8/12.48，5 日涨跌幅为 2.59%，成交量较前 5 日均量为 0.68 倍，20 日高点距离为 -9.5%，规则判定为 sideways。",
+      "trigger_conditions": [
+        "data sufficient",
+        "no stronger trend rule matched"
+      ],
+      "risk_notes": [
+        "短期方向不明确，可能继续震荡。"
+      ],
+      "observation_notes": [
+        "观察是否出现放量突破或跌破震荡区间。"
+      ],
+      "data_quality": {
+        "status": "ok",
+        "problems": [],
+        "bar_count": 60
+      },
+      "metrics": {
+        "ma5": 13.29,
+        "ma10": 12.8,
+        "ma20": 12.48,
+        "pct_chg_1d": -3.06,
+        "pct_chg_5d": 2.59,
+        "pct_chg_10d": 10.37,
+        "volume_ratio_5d": 0.68,
+        "drawdown_from_20d_high": -9.5,
+        "distance_to_20d_high": -9.5,
+        "latest_close": 12.67,
+        "latest_volume": 528292.0,
+        "latest_trade_date": "2026-06-18"
+      },
+      "source_daily_k_status": "ok",
+      "latest_trade_date": "2026-06-18",
+      "created_at": "2026-06-19T18:25:10.285817+08:00",
+      "label": "trend_analysis",
+      "method": "rule_based"
+    },
+    {
+      "code": "002747",
+      "name": "埃斯顿",
+      "market": "SZ",
+      "heat_score": 18.0,
+      "related_concepts": [
+        "机器人",
+        "固态电池"
+      ],
+      "trend_state": "recovering",
+      "trend_score": 62,
+      "trend_reason": "最近收盘价为 36.5，MA5/MA10/MA20 分别为 33.81/34.09/31.26，5 日涨跌幅为 9.45%，成交量较前 5 日均量为 0.61 倍，20 日高点距离为 -8.52%，规则判定为 recovering。",
+      "trigger_conditions": [
+        "close > ma5",
+        "ma5 >= ma10 or pct_chg_5d > 3",
+        "drawdown_from_20d_high <= -5"
+      ],
+      "risk_notes": [
+        "修复趋势可能失败，需要观察量能和均线延续性。"
+      ],
+      "observation_notes": [
+        "观察收盘价能否继续站稳短期均线，并逐步修复与 20 日高点的距离。"
+      ],
+      "data_quality": {
+        "status": "ok",
+        "problems": [],
+        "bar_count": 60
+      },
+      "metrics": {
+        "ma5": 33.81,
+        "ma10": 34.09,
+        "ma20": 31.26,
+        "pct_chg_1d": 10.01,
+        "pct_chg_5d": 9.45,
+        "pct_chg_10d": 23.77,
+        "volume_ratio_5d": 0.61,
+        "drawdown_from_20d_high": -8.52,
+        "distance_to_20d_high": -8.52,
+        "latest_close": 36.5,
+        "latest_volume": 729035.0,
+        "latest_trade_date": "2026-06-18"
+      },
+      "source_daily_k_status": "ok",
+      "latest_trade_date": "2026-06-18",
+      "created_at": "2026-06-19T18:25:10.285817+08:00",
+      "label": "trend_analysis",
+      "method": "rule_based"
+    },
+    {
+      "code": "002837",
+      "name": "英维克",
+      "market": "SZ",
+      "heat_score": 18.0,
+      "related_concepts": [
+        "AI算力",
+        "光通信",
+        "数据中心"
+      ],
+      "trend_state": "recovering",
+      "trend_score": 62,
+      "trend_reason": "最近收盘价为 74.37，MA5/MA10/MA20 分别为 71.76/69.38/77.9，5 日涨跌幅为 10.77%，成交量较前 5 日均量为 1.04 倍，20 日高点距离为 -30.07%，规则判定为 recovering。",
+      "trigger_conditions": [
+        "close > ma5",
+        "ma5 >= ma10 or pct_chg_5d > 3",
+        "drawdown_from_20d_high <= -5"
+      ],
+      "risk_notes": [
+        "修复趋势可能失败，需要观察量能和均线延续性。"
+      ],
+      "observation_notes": [
+        "观察收盘价能否继续站稳短期均线，并逐步修复与 20 日高点的距离。"
+      ],
+      "data_quality": {
+        "status": "ok",
+        "problems": [],
+        "bar_count": 60
+      },
+      "metrics": {
+        "ma5": 71.76,
+        "ma10": 69.38,
+        "ma20": 77.9,
+        "pct_chg_1d": -0.34,
+        "pct_chg_5d": 10.77,
+        "pct_chg_10d": 7.44,
+        "volume_ratio_5d": 1.04,
+        "drawdown_from_20d_high": -30.07,
+        "distance_to_20d_high": -30.07,
+        "latest_close": 74.37,
+        "latest_volume": 553636.0,
+        "latest_trade_date": "2026-06-18"
+      },
+      "source_daily_k_status": "ok",
+      "latest_trade_date": "2026-06-18",
+      "created_at": "2026-06-19T18:25:10.285817+08:00",
+      "label": "trend_analysis",
+      "method": "rule_based"
+    },
+    {
+      "code": "300394",
+      "name": "天孚通信",
+      "market": "SZ",
+      "heat_score": 18.0,
+      "related_concepts": [
+        "AI算力",
+        "光通信",
+        "数据中心"
+      ],
+      "trend_state": "weakening",
+      "trend_score": 35,
+      "trend_reason": "最近收盘价为 336.6，MA5/MA10/MA20 分别为 315.33/372.6/404.86，5 日涨跌幅为 -18.36%，成交量较前 5 日均量为 1.21 倍，20 日高点距离为 -35.89%，规则判定为 weakening。",
+      "trigger_conditions": [
+        "close < ma10",
+        "pct_chg_5d < -5"
+      ],
+      "risk_notes": [
+        "短期走弱，需关注是否继续下破关键均线。"
+      ],
+      "observation_notes": [
+        "观察是否重新站回 MA10/MA20，或继续扩大回撤。"
+      ],
+      "data_quality": {
+        "status": "ok",
+        "problems": [],
+        "bar_count": 60
+      },
+      "metrics": {
+        "ma5": 315.33,
+        "ma10": 372.6,
+        "ma20": 404.86,
+        "pct_chg_1d": 2.21,
+        "pct_chg_5d": -18.36,
+        "pct_chg_10d": -29.94,
+        "volume_ratio_5d": 1.21,
+        "drawdown_from_20d_high": -35.89,
+        "distance_to_20d_high": -35.89,
+        "latest_close": 336.6,
+        "latest_volume": 491851.0,
+        "latest_trade_date": "2026-06-18"
+      },
+      "source_daily_k_status": "ok",
+      "latest_trade_date": "2026-06-18",
+      "created_at": "2026-06-19T18:25:10.285817+08:00",
+      "label": "trend_analysis",
+      "method": "rule_based"
+    },
+    {
+      "code": "300442",
+      "name": "润泽科技",
+      "market": "SZ",
+      "heat_score": 18.0,
+      "related_concepts": [
+        "AI算力",
+        "光通信",
+        "数据中心"
+      ],
+      "trend_state": "recovering",
+      "trend_score": 62,
+      "trend_reason": "最近收盘价为 85.18，MA5/MA10/MA20 分别为 79.56/77.7/81.72，5 日涨跌幅为 15.08%，成交量较前 5 日均量为 1.39 倍，20 日高点距离为 -10.19%，规则判定为 recovering。",
+      "trigger_conditions": [
+        "close > ma5",
+        "ma5 >= ma10 or pct_chg_5d > 3",
+        "drawdown_from_20d_high <= -5"
+      ],
+      "risk_notes": [
+        "修复趋势可能失败，需要观察量能和均线延续性。"
+      ],
+      "observation_notes": [
+        "观察收盘价能否继续站稳短期均线，并逐步修复与 20 日高点的距离。"
+      ],
+      "data_quality": {
+        "status": "ok",
+        "problems": [],
+        "bar_count": 60
+      },
+      "metrics": {
+        "ma5": 79.56,
+        "ma10": 77.7,
+        "ma20": 81.72,
+        "pct_chg_1d": 4.94,
+        "pct_chg_5d": 15.08,
+        "pct_chg_10d": 4.16,
+        "volume_ratio_5d": 1.39,
+        "drawdown_from_20d_high": -10.19,
+        "distance_to_20d_high": -10.19,
+        "latest_close": 85.18,
+        "latest_volume": 464686.0,
+        "latest_trade_date": "2026-06-18"
+      },
+      "source_daily_k_status": "ok",
+      "latest_trade_date": "2026-06-18",
+      "created_at": "2026-06-19T18:25:10.285817+08:00",
+      "label": "trend_analysis",
+      "method": "rule_based"
+    },
+    {
+      "code": "300750",
+      "name": "宁德时代",
+      "market": "SZ",
+      "heat_score": 18.0,
+      "related_concepts": [
+        "机器人",
+        "固态电池"
+      ],
+      "trend_state": "weakening",
+      "trend_score": 38,
+      "trend_reason": "最近收盘价为 391.55，MA5/MA10/MA20 分别为 397.41/395.32/405.64，5 日涨跌幅为 2.45%，成交量较前 5 日均量为 1.41 倍，20 日高点距离为 -10.65%，规则判定为 weakening。",
+      "trigger_conditions": [
+        "close < ma20"
+      ],
+      "risk_notes": [
+        "短期走弱，需关注是否继续下破关键均线。"
+      ],
+      "observation_notes": [
+        "观察是否重新站回 MA10/MA20，或继续扩大回撤。"
+      ],
+      "data_quality": {
+        "status": "ok",
+        "problems": [],
+        "bar_count": 60
+      },
+      "metrics": {
+        "ma5": 397.41,
+        "ma10": 395.32,
+        "ma20": 405.64,
+        "pct_chg_1d": -1.87,
+        "pct_chg_5d": 2.45,
+        "pct_chg_10d": -4.08,
+        "volume_ratio_5d": 1.41,
+        "drawdown_from_20d_high": -10.65,
+        "distance_to_20d_high": -10.65,
+        "latest_close": 391.55,
+        "latest_volume": 385481.0,
+        "latest_trade_date": "2026-06-18"
+      },
+      "source_daily_k_status": "ok",
+      "latest_trade_date": "2026-06-18",
+      "created_at": "2026-06-19T18:25:10.285817+08:00",
+      "label": "trend_analysis",
+      "method": "rule_based"
+    },
+    {
+      "code": "600118",
+      "name": "中国卫星",
+      "market": "SH",
+      "heat_score": 18.0,
+      "related_concepts": [
+        "商业航天",
+        "低空经济"
+      ],
+      "trend_state": "weakening",
+      "trend_score": 38,
+      "trend_reason": "最近收盘价为 76.52，MA5/MA10/MA20 分别为 76.29/78.41/79.87，5 日涨跌幅为 -1.94%，成交量较前 5 日均量为 0.89 倍，20 日高点距离为 -13.38%，规则判定为 weakening。",
+      "trigger_conditions": [
+        "close < ma20"
+      ],
+      "risk_notes": [
+        "短期走弱，需关注是否继续下破关键均线。"
+      ],
+      "observation_notes": [
+        "观察是否重新站回 MA10/MA20，或继续扩大回撤。"
+      ],
+      "data_quality": {
+        "status": "ok",
+        "problems": [],
+        "bar_count": 60
+      },
+      "metrics": {
+        "ma5": 76.29,
+        "ma10": 78.41,
+        "ma20": 79.87,
+        "pct_chg_1d": 0.96,
+        "pct_chg_5d": -1.94,
+        "pct_chg_10d": -4.68,
+        "volume_ratio_5d": 0.89,
+        "drawdown_from_20d_high": -13.38,
+        "distance_to_20d_high": -13.38,
+        "latest_close": 76.52,
+        "latest_volume": 454695.0,
+        "latest_trade_date": "2026-06-18"
+      },
+      "source_daily_k_status": "ok",
+      "latest_trade_date": "2026-06-18",
+      "created_at": "2026-06-19T18:25:10.285817+08:00",
+      "label": "trend_analysis",
+      "method": "rule_based"
+    },
+    {
+      "code": "688256",
+      "name": "寒武纪",
+      "market": "SH",
+      "heat_score": 18.0,
+      "related_concepts": [
+        "AI算力",
+        "光通信",
+        "数据中心"
+      ],
+      "trend_state": "overheated",
+      "trend_score": 85,
+      "trend_reason": "最近收盘价为 1507.46，MA5/MA10/MA20 分别为 1341.89/1297.95/1319.97，5 日涨跌幅为 23.61%，成交量较前 5 日均量为 1.89 倍，20 日高点距离为 -2.11%，规则判定为 overheated。",
+      "trigger_conditions": [
+        "pct_chg_5d >= 20",
+        "distance_to_20d_high > -3",
+        "volume_ratio_5d >= 1.8"
+      ],
+      "risk_notes": [
+        "短期涨幅较大，追高波动风险上升。",
+        "规则版分析未包含基本面和公告风险。"
+      ],
+      "observation_notes": [
+        "观察后续波动是否收敛，以及量能是否明显回落。"
+      ],
+      "data_quality": {
+        "status": "ok",
+        "problems": [],
+        "bar_count": 60
+      },
+      "metrics": {
+        "ma5": 1341.89,
+        "ma10": 1297.95,
+        "ma20": 1319.97,
+        "pct_chg_1d": 14.2,
+        "pct_chg_5d": 23.61,
+        "pct_chg_10d": 10.93,
+        "volume_ratio_5d": 1.89,
+        "drawdown_from_20d_high": -2.11,
+        "distance_to_20d_high": -2.11,
+        "latest_close": 1507.46,
+        "latest_volume": 22169416.0,
+        "latest_trade_date": "2026-06-18"
+      },
+      "source_daily_k_status": "ok",
+      "latest_trade_date": "2026-06-18",
+      "created_at": "2026-06-19T18:25:10.285817+08:00",
+      "label": "trend_analysis",
+      "method": "rule_based"
+    },
+    {
+      "code": "002074",
+      "name": "国轩高科",
+      "market": "SZ",
+      "heat_score": 15.5,
+      "related_concepts": [
+        "机器人",
+        "固态电池"
+      ],
+      "trend_state": "recovering",
+      "trend_score": 62,
+      "trend_reason": "最近收盘价为 29.71，MA5/MA10/MA20 分别为 29.7/29.41/31.35，5 日涨跌幅为 4.8%，成交量较前 5 日均量为 1.09 倍，20 日高点距离为 -16.17%，规则判定为 recovering。",
+      "trigger_conditions": [
+        "close > ma5",
+        "ma5 >= ma10 or pct_chg_5d > 3",
+        "drawdown_from_20d_high <= -5"
+      ],
+      "risk_notes": [
+        "修复趋势可能失败，需要观察量能和均线延续性。"
+      ],
+      "observation_notes": [
+        "观察收盘价能否继续站稳短期均线，并逐步修复与 20 日高点的距离。"
+      ],
+      "data_quality": {
+        "status": "ok",
+        "problems": [],
+        "bar_count": 60
+      },
+      "metrics": {
+        "ma5": 29.7,
+        "ma10": 29.41,
+        "ma20": 31.35,
+        "pct_chg_1d": -1.36,
+        "pct_chg_5d": 4.8,
+        "pct_chg_10d": -3.1,
+        "volume_ratio_5d": 1.09,
+        "drawdown_from_20d_high": -16.17,
+        "distance_to_20d_high": -16.17,
+        "latest_close": 29.71,
+        "latest_volume": 307705.0,
+        "latest_trade_date": "2026-06-18"
+      },
+      "source_daily_k_status": "ok",
+      "latest_trade_date": "2026-06-18",
+      "created_at": "2026-06-19T18:25:10.285817+08:00",
+      "label": "trend_analysis",
+      "method": "rule_based"
+    },
+    {
+      "code": "002465",
+      "name": "海格通信",
+      "market": "SZ",
+      "heat_score": 15.5,
+      "related_concepts": [
+        "商业航天",
+        "低空经济"
+      ],
+      "trend_state": "weakening",
+      "trend_score": 38,
+      "trend_reason": "最近收盘价为 13.68，MA5/MA10/MA20 分别为 13.79/14.18/15.31，5 日涨跌幅为 0.59%，成交量较前 5 日均量为 0.62 倍，20 日高点距离为 -26.05%，规则判定为 weakening。",
+      "trigger_conditions": [
+        "close < ma20"
+      ],
+      "risk_notes": [
+        "短期走弱，需关注是否继续下破关键均线。"
+      ],
+      "observation_notes": [
+        "观察是否重新站回 MA10/MA20，或继续扩大回撤。"
+      ],
+      "data_quality": {
+        "status": "ok",
+        "problems": [],
+        "bar_count": 60
+      },
+      "metrics": {
+        "ma5": 13.79,
+        "ma10": 14.18,
+        "ma20": 15.31,
+        "pct_chg_1d": -1.23,
+        "pct_chg_5d": 0.59,
+        "pct_chg_10d": -8.25,
+        "volume_ratio_5d": 0.62,
+        "drawdown_from_20d_high": -26.05,
+        "distance_to_20d_high": -26.05,
+        "latest_close": 13.68,
+        "latest_volume": 865740.0,
+        "latest_trade_date": "2026-06-18"
+      },
+      "source_daily_k_status": "ok",
+      "latest_trade_date": "2026-06-18",
+      "created_at": "2026-06-19T18:25:10.285817+08:00",
+      "label": "trend_analysis",
+      "method": "rule_based"
+    },
+    {
+      "code": "300073",
+      "name": "当升科技",
+      "market": "SZ",
+      "heat_score": 15.5,
+      "related_concepts": [
+        "机器人",
+        "固态电池"
+      ],
+      "trend_state": "recovering",
+      "trend_score": 62,
+      "trend_reason": "最近收盘价为 51.79，MA5/MA10/MA20 分别为 51.61/50.37/53.32，5 日涨跌幅为 7.58%，成交量较前 5 日均量为 0.87 倍，20 日高点距离为 -14.42%，规则判定为 recovering。",
+      "trigger_conditions": [
+        "close > ma5",
+        "ma5 >= ma10 or pct_chg_5d > 3",
+        "drawdown_from_20d_high <= -5"
+      ],
+      "risk_notes": [
+        "修复趋势可能失败，需要观察量能和均线延续性。"
+      ],
+      "observation_notes": [
+        "观察收盘价能否继续站稳短期均线，并逐步修复与 20 日高点的距离。"
+      ],
+      "data_quality": {
+        "status": "ok",
+        "problems": [],
+        "bar_count": 60
+      },
+      "metrics": {
+        "ma5": 51.61,
+        "ma10": 50.37,
+        "ma20": 53.32,
+        "pct_chg_1d": -1.26,
+        "pct_chg_5d": 7.58,
+        "pct_chg_10d": -1.54,
+        "volume_ratio_5d": 0.87,
+        "drawdown_from_20d_high": -14.42,
+        "distance_to_20d_high": -14.42,
+        "latest_close": 51.79,
+        "latest_volume": 120690.0,
+        "latest_trade_date": "2026-06-18"
+      },
+      "source_daily_k_status": "ok",
+      "latest_trade_date": "2026-06-18",
+      "created_at": "2026-06-19T18:25:10.285817+08:00",
+      "label": "trend_analysis",
+      "method": "rule_based"
+    }
+  ],
+  "errors": []
+}

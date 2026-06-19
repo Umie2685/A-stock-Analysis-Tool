@@ -172,3 +172,121 @@ Notes:
 - Report generation reads Fast Evidence Pack only.
 - No network request, probe rerun, PDF download, LLM call, or third-party dependency was used by this report step.
 - Research report ratings and target prices are displayed as source metadata only.
+
+## MVP4-005G Daily K and Trend Pipeline
+
+Status: Success
+
+Checked time: 2026-06-19T17:55:39.230173+08:00
+
+Command:
+
+```bash
+python scripts/run_mvp4_pipeline.py --limit 20
+```
+
+Inputs:
+
+- data/analysis/candidate_watchlist_latest.json
+
+Steps:
+
+- scripts/probes/test_daily_k_probe.py --limit 20
+- scripts/analysis/analyze_trends.py
+
+Output files:
+
+- data/market/daily_k_latest.json
+- data/market/daily_k_20260619.json
+- data/analysis/trend_analysis_latest.json
+- data/analysis/trend_analysis_20260619.json
+- reports/trend_analysis_latest.md
+- reports/trend_analysis_20260619.md
+
+Daily K result:
+
+- source: tencent_daily_k
+- requested candidate limit: 20
+- item count: 20
+- ok count: 20
+- failed count: 0
+
+Trend analysis result:
+
+- method: rule_based
+- item count: 20
+- ok count: 20
+- unknown count: 0
+- strong_uptrend: 0
+- recovering: 9
+- sideways: 4
+- weakening: 6
+- overheated: 1
+- unknown: 0
+
+Notes:
+
+- The MVP4 pipeline accesses only the low-frequency daily K probe source, then runs local rule-based analysis.
+- The pipeline does not start the Dashboard.
+- No third-party dependency, PDF download, LLM call, order-book data, intraday data, high-frequency data, automatic trading, or trading output was added.
+
+## MVP4-006G Sealing Audit
+
+Status: Success
+
+Checked time: 2026-06-19T18:15:01.123153+08:00
+
+Commands:
+
+```bash
+git status --short
+python -m py_compile scripts/run_mvp4_pipeline.py
+python scripts/run_mvp4_pipeline.py --limit 20
+python -m json.tool data/market/daily_k_latest.json
+python -m json.tool data/analysis/trend_analysis_latest.json
+python -m py_compile scripts/probes/test_daily_k_probe.py scripts/analysis/analyze_trends.py scripts/analysis/analyze_hot_events.py scripts/analysis/build_candidate_watchlist.py scripts/run_web_dashboard.py scripts/run_mvp2_pipeline.py
+python scripts/run_web_dashboard.py
+```
+
+Core-chain result:
+
+- daily_k source: tencent_daily_k
+- daily_k item count: 20
+- daily_k ok count: 20
+- daily_k failed count: 0
+- trend_analysis method: rule_based
+- trend_analysis item count: 20
+- trend_analysis ok count: 20
+- trend_analysis unknown count: 0
+- latest_trade_date distribution: 2026-06-18 = 20
+
+Trend-state distribution:
+
+- strong_uptrend: 0
+- recovering: 9
+- sideways: 4
+- weakening: 6
+- overheated: 1
+- unknown: 0
+
+Dashboard route check:
+
+- /: HTTP 200
+- /trend-analysis: HTTP 200
+- /trend-analysis-report: HTTP 200
+- /candidate-watchlist: HTTP 200
+- /hot-events-report: HTTP 200
+
+Workspace audit:
+
+- Modified tracked docs: docs/current_progress.md, docs/endpoint_probe_results.md
+- Modified tracked Dashboard file from MVP4 page work: scripts/run_web_dashboard.py
+- New MVP4 script files remain untracked until a manual review stage.
+- Generated data and report files remain in place and were not cleaned.
+
+Notes:
+
+- The audit accessed the network only through the existing low-frequency daily K probe.
+- Dashboard service was stopped after validation and port 8000 was confirmed closed.
+- Forbidden wording scan returned zero matches in the requested MVP4 audit scope.
+- No feature code, trend rule, Dashboard business logic, new data source, dependency, commit, staging action, or file cleanup was performed by this sealing audit.
