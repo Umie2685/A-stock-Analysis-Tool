@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "description": "Manual review status for candidate_review items. This file does not auto-sync to watchlist.",
+  "updated_at": "2026-06-19T00:00:00+08:00",
+  "sync_mode": "manual_confirm",
+  "allowed_status": [
+    "pending",
+    "watch",
+    "skip",
+    "confirmed",
+    "rejected"
+  ],
+  "items": []
+}

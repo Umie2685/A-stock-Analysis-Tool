@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "items": [
+    {
+      "title": "示例热点事件标题",
+      "summary": "事件简述",
+      "source": "manual",
+      "publish_time": "2026-06-19",
+      "url": "",
+      "enabled": true,
+      "note": "人工录入热点"
+    }
+  ]
+}
