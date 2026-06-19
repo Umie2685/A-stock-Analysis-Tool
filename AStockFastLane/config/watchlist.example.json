@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "description": "Example watchlist for AStockFastLane. Copy to watchlist.json and edit for local use.",
+  "items": [
+    {
+      "code": "688017",
+      "name": "绿的谐波",
+      "market": "SH",
+      "enabled": true,
+      "orgId": "9900041602",
+      "note": "sample"
+    },
+    {
+      "code": "300750",
+      "name": "宁德时代",
+      "market": "SZ",
+      "enabled": false,
+      "note": "disabled example"
+    }
+  ]
+}

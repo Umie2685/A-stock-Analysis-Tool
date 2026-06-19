@@ -1,0 +1,1670 @@
+{
+  "schema_version": 3,
+  "analysis_name": "hot_events",
+  "analysis_level": "rule_based",
+  "generated_at": "2026-06-19T01:56:50.803019+08:00",
+  "source_evidence_pack": "data/evidence/fast_evidence_pack_latest.json",
+  "manual_hot_events": "data/manual/hot_events_manual.json",
+  "concept_map": "config/concept_map.json",
+  "success": true,
+  "event_scope": "evidence_news_plus_manual_hot_event",
+  "input_source_counts": {
+    "manual_hot_event": 4,
+    "evidence_news": 10
+  },
+  "event_count": 14,
+  "matched_concepts": [
+    {
+      "concept": "有色金属",
+      "event_count": 2
+    },
+    {
+      "concept": "AI算力",
+      "event_count": 1
+    },
+    {
+      "concept": "光通信",
+      "event_count": 1
+    },
+    {
+      "concept": "数据中心",
+      "event_count": 1
+    },
+    {
+      "concept": "机器人",
+      "event_count": 1
+    },
+    {
+      "concept": "固态电池",
+      "event_count": 1
+    },
+    {
+      "concept": "商业航天",
+      "event_count": 1
+    },
+    {
+      "concept": "低空经济",
+      "event_count": 1
+    },
+    {
+      "concept": "军工",
+      "event_count": 1
+    }
+  ],
+  "candidate_watchlist_count": 25,
+  "related_stock_examples": [
+    {
+      "code": "000977",
+      "name": "浪潮信息",
+      "role": "AI服务器候选观察公司",
+      "relevance_score": 4,
+      "reason": "服务器和算力基础设施相关",
+      "risk_note": "需关注订单节奏、毛利率和供应链扰动",
+      "link_type": "candidate_watchlist"
+    },
+    {
+      "code": "688256",
+      "name": "寒武纪",
+      "role": "AI芯片候选观察公司",
+      "relevance_score": 4,
+      "reason": "AI芯片和智能计算相关",
+      "risk_note": "需关注研发投入、客户验证和盈利兑现节奏",
+      "link_type": "candidate_watchlist"
+    },
+    {
+      "code": "300308",
+      "name": "中际旭创",
+      "role": "高速光模块候选观察公司",
+      "relevance_score": 5,
+      "reason": "AI算力集群光模块相关",
+      "risk_note": "需关注海外需求、产品迭代和估值波动",
+      "link_type": "candidate_watchlist"
+    },
+    {
+      "code": "300502",
+      "name": "新易盛",
+      "role": "光模块候选观察公司",
+      "relevance_score": 5,
+      "reason": "高速光模块相关",
+      "risk_note": "需关注海外客户订单和产能节奏",
+      "link_type": "candidate_watchlist"
+    },
+    {
+      "code": "300394",
+      "name": "天孚通信",
+      "role": "光器件候选观察公司",
+      "relevance_score": 4,
+      "reason": "光器件和高速互连相关",
+      "risk_note": "需关注产品认证和订单兑现",
+      "link_type": "candidate_watchlist"
+    },
+    {
+      "code": "300442",
+      "name": "润泽科技",
+      "role": "数据中心服务候选观察公司",
+      "relevance_score": 4,
+      "reason": "数据中心和算力基础设施相关",
+      "risk_note": "需关注上架率、客户结构和资本开支",
+      "link_type": "candidate_watchlist"
+    },
+    {
+      "code": "603881",
+      "name": "数据港",
+      "role": "IDC候选观察公司",
+      "relevance_score": 3,
+      "reason": "数据中心运营相关",
+      "risk_note": "需关注客户集中度和项目回报周期",
+      "link_type": "candidate_watchlist"
+    },
+    {
+      "code": "002837",
+      "name": "英维克",
+      "role": "温控和液冷候选观察公司",
+      "relevance_score": 4,
+      "reason": "数据中心温控和液冷相关",
+      "risk_note": "需关注液冷渗透和订单兑现",
+      "link_type": "candidate_watchlist"
+    },
+    {
+      "code": "688017",
+      "name": "绿的谐波",
+      "role": "谐波减速器候选观察公司",
+      "relevance_score": 5,
+      "reason": "谐波减速器相关",
+      "risk_note": "需关注订单兑现、产能节奏和估值波动",
+      "link_type": "candidate_watchlist"
+    },
+    {
+      "code": "002050",
+      "name": "三花智控",
+      "role": "机器人执行器候选观察公司",
+      "relevance_score": 4,
+      "reason": "执行器和热管理链条相关",
+      "risk_note": "需关注机器人业务占比和客户验证",
+      "link_type": "candidate_watchlist"
+    },
+    {
+      "code": "002747",
+      "name": "埃斯顿",
+      "role": "工业机器人候选观察公司",
+      "relevance_score": 4,
+      "reason": "机器人本体和自动化相关",
+      "risk_note": "需关注行业资本开支和盈利修复",
+      "link_type": "candidate_watchlist"
+    },
+    {
+      "code": "300750",
+      "name": "宁德时代",
+      "role": "电池技术路线候选观察公司",
+      "relevance_score": 4,
+      "reason": "动力电池和新技术路线相关",
+      "risk_note": "需关注技术路线、资本开支和下游需求",
+      "link_type": "candidate_watchlist"
+    },
+    {
+      "code": "002074",
+      "name": "国轩高科",
+      "role": "电池制造候选观察公司",
+      "relevance_score": 3,
+      "reason": "电池制造和固态电池研发相关",
+      "risk_note": "需关注量产节奏和盈利能力",
+      "link_type": "candidate_watchlist"
+    },
+    {
+      "code": "300073",
+      "name": "当升科技",
+      "role": "电池材料候选观察公司",
+      "relevance_score": 3,
+      "reason": "锂电材料相关",
+      "risk_note": "需关注材料价格和客户需求",
+      "link_type": "candidate_watchlist"
+    },
+    {
+      "code": "600118",
+      "name": "中国卫星",
+      "role": "卫星制造候选观察公司",
+      "relevance_score": 4,
+      "reason": "卫星研制和航天产业链相关",
+      "risk_note": "需关注项目节奏和订单披露",
+      "link_type": "candidate_watchlist"
+    },
+    {
+      "code": "002465",
+      "name": "海格通信",
+      "role": "卫星通信候选观察公司",
+      "relevance_score": 3,
+      "reason": "通信和北斗应用相关",
+      "risk_note": "需关注项目交付和需求兑现",
+      "link_type": "candidate_watchlist"
+    },
+    {
+      "code": "300474",
+      "name": "景嘉微",
+      "role": "航天电子候选观察公司",
+      "relevance_score": 3,
+      "reason": "图形处理和航天电子相关",
+      "risk_note": "需关注产品验证和需求波动",
+      "link_type": "candidate_watchlist"
+    },
+    {
+      "code": "002085",
+      "name": "万丰奥威",
+      "role": "低空飞行器候选观察公司",
+      "relevance_score": 4,
+      "reason": "通航和低空飞行器相关",
+      "risk_note": "需关注业务占比、订单兑现和政策节奏",
+      "link_type": "candidate_watchlist"
+    },
+    {
+      "code": "002179",
+      "name": "中航光电",
+      "role": "连接器候选观察公司",
+      "relevance_score": 3,
+      "reason": "航空航天连接器相关",
+      "risk_note": "需关注低空业务实际暴露程度",
+      "link_type": "candidate_watchlist"
+    },
+    {
+      "code": "600038",
+      "name": "中直股份",
+      "role": "航空装备候选观察公司",
+      "relevance_score": 3,
+      "reason": "航空装备制造相关",
+      "risk_note": "需关注订单节奏和产业政策变化",
+      "link_type": "candidate_watchlist"
+    }
+  ],
+  "hot_events": [
+    {
+      "event_id": "hot_event_001",
+      "evidence_id": "manual_hot_event_001",
+      "evidence_type": "manual_hot_event",
+      "input_source": "manual_hot_event",
+      "title": "AI算力与光通信需求升温，数据中心高速互连继续扩容",
+      "summary": "人工录入热点：围绕大模型训练、推理集群、光模块和数据中心扩容的公开信息线索，用于测试规则版热点分析链路。",
+      "publish_time": "2026-06-19",
+      "source": "manual_hot_event",
+      "url": "",
+      "stock": {
+        "code": "",
+        "name": "",
+        "market": ""
+      },
+      "impact_direction": "concept_related",
+      "impact_strength": "high",
+      "impact_score": 14,
+      "impact_logic": [
+        "AI模型训练和推理需求变化可能带动服务器、芯片、光模块、液冷和数据中心等环节的公开信息研究。",
+        "数据中心和AI集群的高速互连需求可能影响光模块、光器件、光芯片和测试环节的研究关注。",
+        "AI算力建设和云厂商资本开支变化可能带动数据中心、液冷、电源和运维环节的研究关注。"
+      ],
+      "risk_notes": [
+        "算力主题覆盖链条较长，需要区分真实业务暴露和概念关联",
+        "单一热点不代表公司业绩兑现",
+        "光模块迭代快，需关注产品结构和客户集中度",
+        "海外需求波动可能放大估值波动",
+        "数据中心项目投入大，回报周期和利用率需要跟踪",
+        "液冷等技术路线仍有项目差异"
+      ],
+      "positive_triggers": [
+        "订单增长",
+        "资本开支增加",
+        "模型发布",
+        "算力集群建设",
+        "政策支持",
+        "产品升级",
+        "客户认证",
+        "数据中心资本开支增加",
+        "算力中心建设",
+        "液冷方案落地"
+      ],
+      "negative_triggers": [
+        "资本开支放缓",
+        "供应链扰动",
+        "商业化不及预期",
+        "算力成本上升",
+        "价格下行",
+        "客户需求放缓",
+        "技术路线变化",
+        "建设进度放缓",
+        "电力成本上升",
+        "利用率不足",
+        "客户需求波动"
+      ],
+      "strong_trigger_words": [],
+      "related_concepts": [
+        {
+          "concept": "AI算力",
+          "match_reasons": [
+            "keyword",
+            "candidate_watchlist"
+          ],
+          "matched_keywords": [
+            "AI算力",
+            "算力",
+            "大模型",
+            "推理集群"
+          ],
+          "impact_logic": "AI模型训练和推理需求变化可能带动服务器、芯片、光模块、液冷和数据中心等环节的公开信息研究。",
+          "positive_triggers": [
+            "订单增长",
+            "资本开支增加",
+            "模型发布",
+            "算力集群建设",
+            "政策支持"
+          ],
+          "negative_triggers": [
+            "资本开支放缓",
+            "供应链扰动",
+            "商业化不及预期",
+            "算力成本上升"
+          ],
+          "risk_notes": [
+            "算力主题覆盖链条较长，需要区分真实业务暴露和概念关联",
+            "单一热点不代表公司业绩兑现"
+          ],
+          "related_stocks": [
+            {
+              "code": "000977",
+              "name": "浪潮信息",
+              "role": "AI服务器候选观察公司",
+              "relevance_score": 4,
+              "reason": "服务器和算力基础设施相关",
+              "risk_note": "需关注订单节奏、毛利率和供应链扰动",
+              "link_type": "candidate_watchlist"
+            },
+            {
+              "code": "688256",
+              "name": "寒武纪",
+              "role": "AI芯片候选观察公司",
+              "relevance_score": 4,
+              "reason": "AI芯片和智能计算相关",
+              "risk_note": "需关注研发投入、客户验证和盈利兑现节奏",
+              "link_type": "candidate_watchlist"
+            },
+            {
+              "code": "300308",
+              "name": "中际旭创",
+              "role": "高速光模块候选观察公司",
+              "relevance_score": 5,
+              "reason": "AI算力集群光模块相关",
+              "risk_note": "需关注海外需求、产品迭代和估值波动",
+              "link_type": "candidate_watchlist"
+            }
+          ]
+        },
+        {
+          "concept": "光通信",
+          "match_reasons": [
+            "keyword",
+            "candidate_watchlist"
+          ],
+          "matched_keywords": [
+            "光通信",
+            "光模块",
+            "高速互连"
+          ],
+          "impact_logic": "数据中心和AI集群的高速互连需求可能影响光模块、光器件、光芯片和测试环节的研究关注。",
+          "positive_triggers": [
+            "订单增长",
+            "产品升级",
+            "客户认证",
+            "数据中心资本开支增加"
+          ],
+          "negative_triggers": [
+            "价格下行",
+            "客户需求放缓",
+            "技术路线变化",
+            "供应链扰动"
+          ],
+          "risk_notes": [
+            "光模块迭代快，需关注产品结构和客户集中度",
+            "海外需求波动可能放大估值波动"
+          ],
+          "related_stocks": [
+            {
+              "code": "300308",
+              "name": "中际旭创",
+              "role": "光模块候选观察公司",
+              "relevance_score": 5,
+              "reason": "高速光模块相关",
+              "risk_note": "需关注客户需求和产品价格变化",
+              "link_type": "candidate_watchlist"
+            },
+            {
+              "code": "300502",
+              "name": "新易盛",
+              "role": "光模块候选观察公司",
+              "relevance_score": 5,
+              "reason": "高速光模块相关",
+              "risk_note": "需关注海外客户订单和产能节奏",
+              "link_type": "candidate_watchlist"
+            },
+            {
+              "code": "300394",
+              "name": "天孚通信",
+              "role": "光器件候选观察公司",
+              "relevance_score": 4,
+              "reason": "光器件和高速互连相关",
+              "risk_note": "需关注产品认证和订单兑现",
+              "link_type": "candidate_watchlist"
+            }
+          ]
+        },
+        {
+          "concept": "数据中心",
+          "match_reasons": [
+            "keyword",
+            "candidate_watchlist"
+          ],
+          "matched_keywords": [
+            "数据中心"
+          ],
+          "impact_logic": "AI算力建设和云厂商资本开支变化可能带动数据中心、液冷、电源和运维环节的研究关注。",
+          "positive_triggers": [
+            "算力中心建设",
+            "资本开支增加",
+            "液冷方案落地",
+            "政策支持"
+          ],
+          "negative_triggers": [
+            "建设进度放缓",
+            "电力成本上升",
+            "利用率不足",
+            "客户需求波动"
+          ],
+          "risk_notes": [
+            "数据中心项目投入大，回报周期和利用率需要跟踪",
+            "液冷等技术路线仍有项目差异"
+          ],
+          "related_stocks": [
+            {
+              "code": "300442",
+              "name": "润泽科技",
+              "role": "数据中心服务候选观察公司",
+              "relevance_score": 4,
+              "reason": "数据中心和算力基础设施相关",
+              "risk_note": "需关注上架率、客户结构和资本开支",
+              "link_type": "candidate_watchlist"
+            },
+            {
+              "code": "603881",
+              "name": "数据港",
+              "role": "IDC候选观察公司",
+              "relevance_score": 3,
+              "reason": "数据中心运营相关",
+              "risk_note": "需关注客户集中度和项目回报周期",
+              "link_type": "candidate_watchlist"
+            },
+            {
+              "code": "002837",
+              "name": "英维克",
+              "role": "温控和液冷候选观察公司",
+              "relevance_score": 4,
+              "reason": "数据中心温控和液冷相关",
+              "risk_note": "需关注液冷渗透和订单兑现",
+              "link_type": "candidate_watchlist"
+            }
+          ]
+        }
+      ],
+      "related_stocks": [
+        {
+          "code": "000977",
+          "name": "浪潮信息",
+          "role": "AI服务器候选观察公司",
+          "relevance_score": 4,
+          "reason": "服务器和算力基础设施相关",
+          "risk_note": "需关注订单节奏、毛利率和供应链扰动",
+          "link_type": "candidate_watchlist"
+        },
+        {
+          "code": "688256",
+          "name": "寒武纪",
+          "role": "AI芯片候选观察公司",
+          "relevance_score": 4,
+          "reason": "AI芯片和智能计算相关",
+          "risk_note": "需关注研发投入、客户验证和盈利兑现节奏",
+          "link_type": "candidate_watchlist"
+        },
+        {
+          "code": "300308",
+          "name": "中际旭创",
+          "role": "高速光模块候选观察公司",
+          "relevance_score": 5,
+          "reason": "AI算力集群光模块相关",
+          "risk_note": "需关注海外需求、产品迭代和估值波动",
+          "link_type": "candidate_watchlist"
+        },
+        {
+          "code": "300502",
+          "name": "新易盛",
+          "role": "光模块候选观察公司",
+          "relevance_score": 5,
+          "reason": "高速光模块相关",
+          "risk_note": "需关注海外客户订单和产能节奏",
+          "link_type": "candidate_watchlist"
+        },
+        {
+          "code": "300394",
+          "name": "天孚通信",
+          "role": "光器件候选观察公司",
+          "relevance_score": 4,
+          "reason": "光器件和高速互连相关",
+          "risk_note": "需关注产品认证和订单兑现",
+          "link_type": "candidate_watchlist"
+        },
+        {
+          "code": "300442",
+          "name": "润泽科技",
+          "role": "数据中心服务候选观察公司",
+          "relevance_score": 4,
+          "reason": "数据中心和算力基础设施相关",
+          "risk_note": "需关注上架率、客户结构和资本开支",
+          "link_type": "candidate_watchlist"
+        },
+        {
+          "code": "603881",
+          "name": "数据港",
+          "role": "IDC候选观察公司",
+          "relevance_score": 3,
+          "reason": "数据中心运营相关",
+          "risk_note": "需关注客户集中度和项目回报周期",
+          "link_type": "candidate_watchlist"
+        },
+        {
+          "code": "002837",
+          "name": "英维克",
+          "role": "温控和液冷候选观察公司",
+          "relevance_score": 4,
+          "reason": "数据中心温控和液冷相关",
+          "risk_note": "需关注液冷渗透和订单兑现",
+          "link_type": "candidate_watchlist"
+        }
+      ],
+      "reason": "规则归类为 high：AI算力 命中关键词：AI算力, 算力, 大模型, 推理集群；包含 3 个候选观察股线索 | 光通信 命中关键词：光通信, 光模块, 高速互连；包含 3 个候选观察股线索 | 数据中心 命中关键词：数据中心；包含 3 个候选观察股线索。",
+      "analysis_level": "rule_based",
+      "classification_method": "offline_rule_keyword_trigger_candidate_watchlist_match",
+      "confidence_note": "规则分析结果仅用于研究辅助和线索归档，不代表投资建议。"
+    },
+    {
+      "event_id": "hot_event_002",
+      "evidence_id": "manual_hot_event_002",
+      "evidence_type": "manual_hot_event",
+      "input_source": "manual_hot_event",
+      "title": "机器人产业链出现新品发布和量产进展线索",
+      "summary": "人工录入热点：覆盖人形机器人、具身智能、减速器、执行器等关键词，用于离线验证概念到候选观察股的传导。",
+      "publish_time": "2026-06-19",
+      "source": "manual_hot_event",
+      "url": "",
+      "stock": {
+        "code": "",
+        "name": "",
+        "market": ""
+      },
+      "impact_direction": "attention_catalyst",
+      "impact_strength": "high",
+      "impact_score": 14,
+      "impact_logic": [
+        "机器人产业催化可能带动减速器、执行器、伺服系统、传感器和控制器等环节的公开信息研究。",
+        "电池技术路线、量产进展和车企验证信息，可能带动固态电池材料、设备和整车验证环节的研究关注。"
+      ],
+      "risk_notes": [
+        "概念热度可能先于业绩兑现",
+        "不同零部件环节的受益程度差异较大",
+        "固态电池产业化节奏存在不确定性",
+        "技术新闻不等于商业化订单"
+      ],
+      "positive_triggers": [
+        "量产",
+        "新品发布",
+        "政策支持",
+        "订单增长",
+        "产业资本投入",
+        "量产进展",
+        "车企验证",
+        "材料突破"
+      ],
+      "negative_triggers": [
+        "商业化不及预期",
+        "订单兑现不足",
+        "估值波动",
+        "技术路线变化",
+        "量产延期",
+        "成本过高",
+        "安全验证不足",
+        "竞争路线变化"
+      ],
+      "strong_trigger_words": [
+        "量产",
+        "新品发布"
+      ],
+      "related_concepts": [
+        {
+          "concept": "机器人",
+          "match_reasons": [
+            "keyword",
+            "candidate_watchlist"
+          ],
+          "matched_keywords": [
+            "机器人",
+            "人形机器人",
+            "具身智能",
+            "减速器",
+            "执行器"
+          ],
+          "impact_logic": "机器人产业催化可能带动减速器、执行器、伺服系统、传感器和控制器等环节的公开信息研究。",
+          "positive_triggers": [
+            "政策支持",
+            "订单增长",
+            "产业资本投入",
+            "新品发布",
+            "量产进展"
+          ],
+          "negative_triggers": [
+            "商业化不及预期",
+            "订单兑现不足",
+            "估值波动",
+            "技术路线变化"
+          ],
+          "risk_notes": [
+            "概念热度可能先于业绩兑现",
+            "不同零部件环节的受益程度差异较大"
+          ],
+          "related_stocks": [
+            {
+              "code": "688017",
+              "name": "绿的谐波",
+              "role": "谐波减速器候选观察公司",
+              "relevance_score": 5,
+              "reason": "谐波减速器相关",
+              "risk_note": "需关注订单兑现、产能节奏和估值波动",
+              "link_type": "candidate_watchlist"
+            },
+            {
+              "code": "002050",
+              "name": "三花智控",
+              "role": "机器人执行器候选观察公司",
+              "relevance_score": 4,
+              "reason": "执行器和热管理链条相关",
+              "risk_note": "需关注机器人业务占比和客户验证",
+              "link_type": "candidate_watchlist"
+            },
+            {
+              "code": "002747",
+              "name": "埃斯顿",
+              "role": "工业机器人候选观察公司",
+              "relevance_score": 4,
+              "reason": "机器人本体和自动化相关",
+              "risk_note": "需关注行业资本开支和盈利修复",
+              "link_type": "candidate_watchlist"
+            }
+          ]
+        },
+        {
+          "concept": "固态电池",
+          "match_reasons": [
+            "keyword",
+            "candidate_watchlist"
+          ],
+          "matched_keywords": [
+            "量产"
+          ],
+          "impact_logic": "电池技术路线、量产进展和车企验证信息，可能带动固态电池材料、设备和整车验证环节的研究关注。",
+          "positive_triggers": [
+            "量产进展",
+            "车企验证",
+            "材料突破",
+            "产业资本投入",
+            "订单增长"
+          ],
+          "negative_triggers": [
+            "量产延期",
+            "成本过高",
+            "安全验证不足",
+            "竞争路线变化"
+          ],
+          "risk_notes": [
+            "固态电池产业化节奏存在不确定性",
+            "技术新闻不等于商业化订单"
+          ],
+          "related_stocks": [
+            {
+              "code": "300750",
+              "name": "宁德时代",
+              "role": "电池技术路线候选观察公司",
+              "relevance_score": 4,
+              "reason": "动力电池和新技术路线相关",
+              "risk_note": "需关注技术路线、资本开支和下游需求",
+              "link_type": "candidate_watchlist"
+            },
+            {
+              "code": "002074",
+              "name": "国轩高科",
+              "role": "电池制造候选观察公司",
+              "relevance_score": 3,
+              "reason": "电池制造和固态电池研发相关",
+              "risk_note": "需关注量产节奏和盈利能力",
+              "link_type": "candidate_watchlist"
+            },
+            {
+              "code": "300073",
+              "name": "当升科技",
+              "role": "电池材料候选观察公司",
+              "relevance_score": 3,
+              "reason": "锂电材料相关",
+              "risk_note": "需关注材料价格和客户需求",
+              "link_type": "candidate_watchlist"
+            }
+          ]
+        }
+      ],
+      "related_stocks": [
+        {
+          "code": "688017",
+          "name": "绿的谐波",
+          "role": "谐波减速器候选观察公司",
+          "relevance_score": 5,
+          "reason": "谐波减速器相关",
+          "risk_note": "需关注订单兑现、产能节奏和估值波动",
+          "link_type": "candidate_watchlist"
+        },
+        {
+          "code": "002050",
+          "name": "三花智控",
+          "role": "机器人执行器候选观察公司",
+          "relevance_score": 4,
+          "reason": "执行器和热管理链条相关",
+          "risk_note": "需关注机器人业务占比和客户验证",
+          "link_type": "candidate_watchlist"
+        },
+        {
+          "code": "002747",
+          "name": "埃斯顿",
+          "role": "工业机器人候选观察公司",
+          "relevance_score": 4,
+          "reason": "机器人本体和自动化相关",
+          "risk_note": "需关注行业资本开支和盈利修复",
+          "link_type": "candidate_watchlist"
+        },
+        {
+          "code": "300750",
+          "name": "宁德时代",
+          "role": "电池技术路线候选观察公司",
+          "relevance_score": 4,
+          "reason": "动力电池和新技术路线相关",
+          "risk_note": "需关注技术路线、资本开支和下游需求",
+          "link_type": "candidate_watchlist"
+        },
+        {
+          "code": "002074",
+          "name": "国轩高科",
+          "role": "电池制造候选观察公司",
+          "relevance_score": 3,
+          "reason": "电池制造和固态电池研发相关",
+          "risk_note": "需关注量产节奏和盈利能力",
+          "link_type": "candidate_watchlist"
+        },
+        {
+          "code": "300073",
+          "name": "当升科技",
+          "role": "电池材料候选观察公司",
+          "relevance_score": 3,
+          "reason": "锂电材料相关",
+          "risk_note": "需关注材料价格和客户需求",
+          "link_type": "candidate_watchlist"
+        }
+      ],
+      "reason": "规则归类为 high：机器人 命中关键词：机器人, 人形机器人, 具身智能, 减速器, 执行器；包含 3 个候选观察股线索 | 固态电池 命中关键词：量产；包含 3 个候选观察股线索；标题强触发词：量产, 新品发布。",
+      "analysis_level": "rule_based",
+      "classification_method": "offline_rule_keyword_trigger_candidate_watchlist_match",
+      "confidence_note": "规则分析结果仅用于研究辅助和线索归档，不代表投资建议。"
+    },
+    {
+      "event_id": "hot_event_003",
+      "evidence_id": "manual_hot_event_003",
+      "evidence_type": "manual_hot_event",
+      "input_source": "manual_hot_event",
+      "title": "商业航天和低空经济政策试点热度提升",
+      "summary": "人工录入热点：覆盖卫星互联网、商业航天、eVTOL、无人机、适航等方向，用于验证多概念命中。",
+      "publish_time": "2026-06-19",
+      "source": "manual_hot_event",
+      "url": "",
+      "stock": {
+        "code": "",
+        "name": "",
+        "market": ""
+      },
+      "impact_direction": "attention_catalyst",
+      "impact_strength": "high",
+      "impact_score": 13,
+      "impact_logic": [
+        "卫星星座建设、火箭发射和卫星互联网应用落地可能影响航天制造、测控、遥感和通信环节的研究关注。",
+        "政策试点、适航认证和商业场景落地信息，可能推动低空经济产业链研究热度。"
+      ],
+      "risk_notes": [
+        "商业航天仍处于建设和验证阶段，商业模式兑现节奏需观察",
+        "项目进度和订单披露可能不连续",
+        "低空经济仍处于场景验证和监管完善阶段",
+        "产业链兑现节奏可能分化"
+      ],
+      "positive_triggers": [
+        "政策",
+        "发射成功",
+        "星座建设",
+        "订单增长",
+        "政策支持",
+        "应用落地",
+        "政策试点",
+        "适航进展",
+        "运营场景落地",
+        "基础设施建设"
+      ],
+      "negative_triggers": [
+        "发射延期",
+        "技术验证不及预期",
+        "商业化放缓",
+        "项目预算变化",
+        "监管不确定",
+        "安全事故",
+        "商业化延期",
+        "基础设施不足"
+      ],
+      "strong_trigger_words": [
+        "政策"
+      ],
+      "related_concepts": [
+        {
+          "concept": "商业航天",
+          "match_reasons": [
+            "keyword",
+            "candidate_watchlist"
+          ],
+          "matched_keywords": [
+            "商业航天",
+            "卫星",
+            "卫星互联网"
+          ],
+          "impact_logic": "卫星星座建设、火箭发射和卫星互联网应用落地可能影响航天制造、测控、遥感和通信环节的研究关注。",
+          "positive_triggers": [
+            "发射成功",
+            "星座建设",
+            "订单增长",
+            "政策支持",
+            "应用落地"
+          ],
+          "negative_triggers": [
+            "发射延期",
+            "技术验证不及预期",
+            "商业化放缓",
+            "项目预算变化"
+          ],
+          "risk_notes": [
+            "商业航天仍处于建设和验证阶段，商业模式兑现节奏需观察",
+            "项目进度和订单披露可能不连续"
+          ],
+          "related_stocks": [
+            {
+              "code": "600118",
+              "name": "中国卫星",
+              "role": "卫星制造候选观察公司",
+              "relevance_score": 4,
+              "reason": "卫星研制和航天产业链相关",
+              "risk_note": "需关注项目节奏和订单披露",
+              "link_type": "candidate_watchlist"
+            },
+            {
+              "code": "002465",
+              "name": "海格通信",
+              "role": "卫星通信候选观察公司",
+              "relevance_score": 3,
+              "reason": "通信和北斗应用相关",
+              "risk_note": "需关注项目交付和需求兑现",
+              "link_type": "candidate_watchlist"
+            },
+            {
+              "code": "300474",
+              "name": "景嘉微",
+              "role": "航天电子候选观察公司",
+              "relevance_score": 3,
+              "reason": "图形处理和航天电子相关",
+              "risk_note": "需关注产品验证和需求波动",
+              "link_type": "candidate_watchlist"
+            }
+          ]
+        },
+        {
+          "concept": "低空经济",
+          "match_reasons": [
+            "keyword",
+            "candidate_watchlist"
+          ],
+          "matched_keywords": [
+            "低空经济",
+            "eVTOL",
+            "无人机",
+            "适航"
+          ],
+          "impact_logic": "政策试点、适航认证和商业场景落地信息，可能推动低空经济产业链研究热度。",
+          "positive_triggers": [
+            "政策试点",
+            "适航进展",
+            "订单增长",
+            "运营场景落地",
+            "基础设施建设"
+          ],
+          "negative_triggers": [
+            "监管不确定",
+            "安全事故",
+            "商业化延期",
+            "基础设施不足"
+          ],
+          "risk_notes": [
+            "低空经济仍处于场景验证和监管完善阶段",
+            "产业链兑现节奏可能分化"
+          ],
+          "related_stocks": [
+            {
+              "code": "002085",
+              "name": "万丰奥威",
+              "role": "低空飞行器候选观察公司",
+              "relevance_score": 4,
+              "reason": "通航和低空飞行器相关",
+              "risk_note": "需关注业务占比、订单兑现和政策节奏",
+              "link_type": "candidate_watchlist"
+            },
+            {
+              "code": "002179",
+              "name": "中航光电",
+              "role": "连接器候选观察公司",
+              "relevance_score": 3,
+              "reason": "航空航天连接器相关",
+              "risk_note": "需关注低空业务实际暴露程度",
+              "link_type": "candidate_watchlist"
+            },
+            {
+              "code": "600038",
+              "name": "中直股份",
+              "role": "航空装备候选观察公司",
+              "relevance_score": 3,
+              "reason": "航空装备制造相关",
+              "risk_note": "需关注订单节奏和产业政策变化",
+              "link_type": "candidate_watchlist"
+            }
+          ]
+        }
+      ],
+      "related_stocks": [
+        {
+          "code": "600118",
+          "name": "中国卫星",
+          "role": "卫星制造候选观察公司",
+          "relevance_score": 4,
+          "reason": "卫星研制和航天产业链相关",
+          "risk_note": "需关注项目节奏和订单披露",
+          "link_type": "candidate_watchlist"
+        },
+        {
+          "code": "002465",
+          "name": "海格通信",
+          "role": "卫星通信候选观察公司",
+          "relevance_score": 3,
+          "reason": "通信和北斗应用相关",
+          "risk_note": "需关注项目交付和需求兑现",
+          "link_type": "candidate_watchlist"
+        },
+        {
+          "code": "300474",
+          "name": "景嘉微",
+          "role": "航天电子候选观察公司",
+          "relevance_score": 3,
+          "reason": "图形处理和航天电子相关",
+          "risk_note": "需关注产品验证和需求波动",
+          "link_type": "candidate_watchlist"
+        },
+        {
+          "code": "002085",
+          "name": "万丰奥威",
+          "role": "低空飞行器候选观察公司",
+          "relevance_score": 4,
+          "reason": "通航和低空飞行器相关",
+          "risk_note": "需关注业务占比、订单兑现和政策节奏",
+          "link_type": "candidate_watchlist"
+        },
+        {
+          "code": "002179",
+          "name": "中航光电",
+          "role": "连接器候选观察公司",
+          "relevance_score": 3,
+          "reason": "航空航天连接器相关",
+          "risk_note": "需关注低空业务实际暴露程度",
+          "link_type": "candidate_watchlist"
+        },
+        {
+          "code": "600038",
+          "name": "中直股份",
+          "role": "航空装备候选观察公司",
+          "relevance_score": 3,
+          "reason": "航空装备制造相关",
+          "risk_note": "需关注订单节奏和产业政策变化",
+          "link_type": "candidate_watchlist"
+        }
+      ],
+      "reason": "规则归类为 high：商业航天 命中关键词：商业航天, 卫星, 卫星互联网；包含 3 个候选观察股线索 | 低空经济 命中关键词：低空经济, eVTOL, 无人机, 适航；包含 3 个候选观察股线索；标题强触发词：政策。",
+      "analysis_level": "rule_based",
+      "classification_method": "offline_rule_keyword_trigger_candidate_watchlist_match",
+      "confidence_note": "规则分析结果仅用于研究辅助和线索归档，不代表投资建议。"
+    },
+    {
+      "event_id": "hot_event_004",
+      "evidence_id": "manual_hot_event_004",
+      "evidence_type": "manual_hot_event",
+      "input_source": "manual_hot_event",
+      "title": "有色金属资源品价格波动带动周期线索",
+      "summary": "人工录入热点：覆盖铜、锂、稀土、资源品等关键词，用于验证风险提示和候选观察股聚合。",
+      "publish_time": "2026-06-19",
+      "source": "manual_hot_event",
+      "url": "",
+      "stock": {
+        "code": "",
+        "name": "",
+        "market": ""
+      },
+      "impact_direction": "risk_alert",
+      "impact_strength": "high",
+      "impact_score": 7,
+      "impact_logic": [
+        "资源价格、供给扰动和新能源需求变化可能影响有色金属采选、冶炼和材料环节的研究关注。"
+      ],
+      "risk_notes": [
+        "资源品价格波动较大，相关公司盈利对价格敏感",
+        "周期波动可能显著影响估值"
+      ],
+      "positive_triggers": [
+        "金属涨价",
+        "供给收缩",
+        "需求增长",
+        "资源并购",
+        "库存下降"
+      ],
+      "negative_triggers": [
+        "风险",
+        "价格回落",
+        "需求不及预期",
+        "库存上升",
+        "政策调控",
+        "海外供给释放"
+      ],
+      "strong_trigger_words": [],
+      "related_concepts": [
+        {
+          "concept": "有色金属",
+          "match_reasons": [
+            "keyword",
+            "candidate_watchlist"
+          ],
+          "matched_keywords": [
+            "有色金属",
+            "铜",
+            "锂",
+            "稀土",
+            "资源品"
+          ],
+          "impact_logic": "资源价格、供给扰动和新能源需求变化可能影响有色金属采选、冶炼和材料环节的研究关注。",
+          "positive_triggers": [
+            "金属涨价",
+            "供给收缩",
+            "需求增长",
+            "资源并购",
+            "库存下降"
+          ],
+          "negative_triggers": [
+            "价格回落",
+            "需求不及预期",
+            "库存上升",
+            "政策调控",
+            "海外供给释放"
+          ],
+          "risk_notes": [
+            "资源品价格波动较大，相关公司盈利对价格敏感",
+            "周期波动可能显著影响估值"
+          ],
+          "related_stocks": [
+            {
+              "code": "601899",
+              "name": "紫金矿业",
+              "role": "铜金资源候选观察公司",
+              "relevance_score": 5,
+              "reason": "铜、金等资源品相关",
+              "risk_note": "需关注金属价格、项目进度和海外经营风险",
+              "link_type": "candidate_watchlist"
+            },
+            {
+              "code": "603799",
+              "name": "华友钴业",
+              "role": "新能源金属材料候选观察公司",
+              "relevance_score": 4,
+              "reason": "钴镍锂材料链条相关",
+              "risk_note": "需关注金属价格和下游需求波动",
+              "link_type": "candidate_watchlist"
+            },
+            {
+              "code": "600111",
+              "name": "北方稀土",
+              "role": "稀土资源候选观察公司",
+              "relevance_score": 4,
+              "reason": "稀土资源和材料相关",
+              "risk_note": "需关注稀土价格和政策节奏",
+              "link_type": "candidate_watchlist"
+            }
+          ]
+        }
+      ],
+      "related_stocks": [
+        {
+          "code": "601899",
+          "name": "紫金矿业",
+          "role": "铜金资源候选观察公司",
+          "relevance_score": 5,
+          "reason": "铜、金等资源品相关",
+          "risk_note": "需关注金属价格、项目进度和海外经营风险",
+          "link_type": "candidate_watchlist"
+        },
+        {
+          "code": "603799",
+          "name": "华友钴业",
+          "role": "新能源金属材料候选观察公司",
+          "relevance_score": 4,
+          "reason": "钴镍锂材料链条相关",
+          "risk_note": "需关注金属价格和下游需求波动",
+          "link_type": "candidate_watchlist"
+        },
+        {
+          "code": "600111",
+          "name": "北方稀土",
+          "role": "稀土资源候选观察公司",
+          "relevance_score": 4,
+          "reason": "稀土资源和材料相关",
+          "risk_note": "需关注稀土价格和政策节奏",
+          "link_type": "candidate_watchlist"
+        }
+      ],
+      "reason": "规则归类为 high：有色金属 命中关键词：有色金属, 铜, 锂, 稀土, 资源品；包含 3 个候选观察股线索。",
+      "analysis_level": "rule_based",
+      "classification_method": "offline_rule_keyword_trigger_candidate_watchlist_match",
+      "confidence_note": "规则分析结果仅用于研究辅助和线索归档，不代表投资建议。"
+    },
+    {
+      "event_id": "hot_event_005",
+      "evidence_id": "eastmoney_news_news_008_13105d3cc8a6",
+      "evidence_type": "news",
+      "input_source": "evidence_news",
+      "title": "LME期铜收跌124美元",
+      "summary": "【LME期铜收跌124美元】LME期铜收跌124美元，报13690美元/吨。LME期铝收跌24美元，报3386美元/吨。LME期锌收涨50美元，报3638美元/吨。LME期铅收涨5美元，报1984美元/吨。LME期镍收跌218美元，报17842美元/吨。LME期锡收跌1691美元，报53653美元/吨。LME期钴收平，报56290美元/吨。",
+      "publish_time": "2026-06-19 00:53:04",
+      "source": "eastmoney_news",
+      "url": "https://finance.eastmoney.com/a/202606193776585216.html",
+      "stock": {
+        "code": "202606193776585216",
+        "name": "",
+        "market": ""
+      },
+      "impact_direction": "concept_related",
+      "impact_strength": "medium",
+      "impact_score": 4,
+      "impact_logic": [
+        "资源价格、供给扰动和新能源需求变化可能影响有色金属采选、冶炼和材料环节的研究关注。"
+      ],
+      "risk_notes": [
+        "资源品价格波动较大，相关公司盈利对价格敏感",
+        "周期波动可能显著影响估值"
+      ],
+      "positive_triggers": [
+        "金属涨价",
+        "供给收缩",
+        "需求增长",
+        "资源并购",
+        "库存下降"
+      ],
+      "negative_triggers": [
+        "价格回落",
+        "需求不及预期",
+        "库存上升",
+        "政策调控",
+        "海外供给释放"
+      ],
+      "strong_trigger_words": [],
+      "related_concepts": [
+        {
+          "concept": "有色金属",
+          "match_reasons": [
+            "keyword",
+            "candidate_watchlist"
+          ],
+          "matched_keywords": [
+            "铜",
+            "铝"
+          ],
+          "impact_logic": "资源价格、供给扰动和新能源需求变化可能影响有色金属采选、冶炼和材料环节的研究关注。",
+          "positive_triggers": [
+            "金属涨价",
+            "供给收缩",
+            "需求增长",
+            "资源并购",
+            "库存下降"
+          ],
+          "negative_triggers": [
+            "价格回落",
+            "需求不及预期",
+            "库存上升",
+            "政策调控",
+            "海外供给释放"
+          ],
+          "risk_notes": [
+            "资源品价格波动较大，相关公司盈利对价格敏感",
+            "周期波动可能显著影响估值"
+          ],
+          "related_stocks": [
+            {
+              "code": "601899",
+              "name": "紫金矿业",
+              "role": "铜金资源候选观察公司",
+              "relevance_score": 5,
+              "reason": "铜、金等资源品相关",
+              "risk_note": "需关注金属价格、项目进度和海外经营风险",
+              "link_type": "candidate_watchlist"
+            },
+            {
+              "code": "603799",
+              "name": "华友钴业",
+              "role": "新能源金属材料候选观察公司",
+              "relevance_score": 4,
+              "reason": "钴镍锂材料链条相关",
+              "risk_note": "需关注金属价格和下游需求波动",
+              "link_type": "candidate_watchlist"
+            },
+            {
+              "code": "600111",
+              "name": "北方稀土",
+              "role": "稀土资源候选观察公司",
+              "relevance_score": 4,
+              "reason": "稀土资源和材料相关",
+              "risk_note": "需关注稀土价格和政策节奏",
+              "link_type": "candidate_watchlist"
+            }
+          ]
+        }
+      ],
+      "related_stocks": [
+        {
+          "code": "601899",
+          "name": "紫金矿业",
+          "role": "铜金资源候选观察公司",
+          "relevance_score": 5,
+          "reason": "铜、金等资源品相关",
+          "risk_note": "需关注金属价格、项目进度和海外经营风险",
+          "link_type": "candidate_watchlist"
+        },
+        {
+          "code": "603799",
+          "name": "华友钴业",
+          "role": "新能源金属材料候选观察公司",
+          "relevance_score": 4,
+          "reason": "钴镍锂材料链条相关",
+          "risk_note": "需关注金属价格和下游需求波动",
+          "link_type": "candidate_watchlist"
+        },
+        {
+          "code": "600111",
+          "name": "北方稀土",
+          "role": "稀土资源候选观察公司",
+          "relevance_score": 4,
+          "reason": "稀土资源和材料相关",
+          "risk_note": "需关注稀土价格和政策节奏",
+          "link_type": "candidate_watchlist"
+        }
+      ],
+      "reason": "规则归类为 medium：有色金属 命中关键词：铜, 铝；包含 3 个候选观察股线索。",
+      "analysis_level": "rule_based",
+      "classification_method": "offline_rule_keyword_trigger_candidate_watchlist_match",
+      "confidence_note": "规则分析结果仅用于研究辅助和线索归档，不代表投资建议。"
+    },
+    {
+      "event_id": "hot_event_006",
+      "evidence_id": "eastmoney_news_news_007_0214beb48331",
+      "evidence_type": "news",
+      "input_source": "evidence_news",
+      "title": "德国派遣舰艇以备霍尔木兹海峡扫雷任务",
+      "summary": "【德国派遣舰艇以备霍尔木兹海峡扫雷任务】德国国防部长皮斯托里乌斯18日表示，德国已经派遣海军扫雷艇“富尔达”号和补给舰“摩泽尔”号通过苏伊士运河，前往红海。德方希望能够迅速抵达霍尔木兹海峡投入行动。皮斯托里乌斯还表示，在霍尔木兹海峡开展扫雷行动需要有明确的国际法框架，并需征得伊朗和阿曼的同意。",
+      "publish_time": "2026-06-19 00:55:58",
+      "source": "eastmoney_news",
+      "url": "https://finance.eastmoney.com/a/202606193776584016.html",
+      "stock": {
+        "code": "202606193776584016",
+        "name": "",
+        "market": ""
+      },
+      "impact_direction": "concept_related",
+      "impact_strength": "medium",
+      "impact_score": 3,
+      "impact_logic": [
+        "国防装备、军贸和无人化装备信息，可能提升军工产业链公开信息研究关注。"
+      ],
+      "risk_notes": [
+        "军工订单和交付节奏披露有限",
+        "主题热度需要结合公告和财务数据验证"
+      ],
+      "positive_triggers": [
+        "订单增长",
+        "装备列装",
+        "军贸进展",
+        "政策支持",
+        "军费增长"
+      ],
+      "negative_triggers": [
+        "交付延期",
+        "预算节奏变化",
+        "供应链扰动",
+        "估值波动"
+      ],
+      "strong_trigger_words": [],
+      "related_concepts": [
+        {
+          "concept": "军工",
+          "match_reasons": [
+            "keyword",
+            "candidate_watchlist"
+          ],
+          "matched_keywords": [
+            "国防"
+          ],
+          "impact_logic": "国防装备、军贸和无人化装备信息，可能提升军工产业链公开信息研究关注。",
+          "positive_triggers": [
+            "订单增长",
+            "装备列装",
+            "军贸进展",
+            "政策支持",
+            "军费增长"
+          ],
+          "negative_triggers": [
+            "交付延期",
+            "预算节奏变化",
+            "供应链扰动",
+            "估值波动"
+          ],
+          "risk_notes": [
+            "军工订单和交付节奏披露有限",
+            "主题热度需要结合公告和财务数据验证"
+          ],
+          "related_stocks": [
+            {
+              "code": "600760",
+              "name": "中航沈飞",
+              "role": "航空装备候选观察公司",
+              "relevance_score": 4,
+              "reason": "航空装备制造相关",
+              "risk_note": "需关注交付节奏和订单披露",
+              "link_type": "candidate_watchlist"
+            },
+            {
+              "code": "600893",
+              "name": "航发动力",
+              "role": "航空发动机候选观察公司",
+              "relevance_score": 4,
+              "reason": "航空发动机产业链相关",
+              "risk_note": "需关注研发交付和盈利节奏",
+              "link_type": "candidate_watchlist"
+            },
+            {
+              "code": "002179",
+              "name": "中航光电",
+              "role": "军工连接器候选观察公司",
+              "relevance_score": 4,
+              "reason": "军工电子连接器相关",
+              "risk_note": "需关注军工订单和民品景气度",
+              "link_type": "candidate_watchlist"
+            }
+          ]
+        }
+      ],
+      "related_stocks": [
+        {
+          "code": "600760",
+          "name": "中航沈飞",
+          "role": "航空装备候选观察公司",
+          "relevance_score": 4,
+          "reason": "航空装备制造相关",
+          "risk_note": "需关注交付节奏和订单披露",
+          "link_type": "candidate_watchlist"
+        },
+        {
+          "code": "600893",
+          "name": "航发动力",
+          "role": "航空发动机候选观察公司",
+          "relevance_score": 4,
+          "reason": "航空发动机产业链相关",
+          "risk_note": "需关注研发交付和盈利节奏",
+          "link_type": "candidate_watchlist"
+        },
+        {
+          "code": "002179",
+          "name": "中航光电",
+          "role": "军工连接器候选观察公司",
+          "relevance_score": 4,
+          "reason": "军工电子连接器相关",
+          "risk_note": "需关注军工订单和民品景气度",
+          "link_type": "candidate_watchlist"
+        }
+      ],
+      "reason": "规则归类为 medium：军工 命中关键词：国防；包含 3 个候选观察股线索。",
+      "analysis_level": "rule_based",
+      "classification_method": "offline_rule_keyword_trigger_candidate_watchlist_match",
+      "confidence_note": "规则分析结果仅用于研究辅助和线索归档，不代表投资建议。"
+    },
+    {
+      "event_id": "hot_event_007",
+      "evidence_id": "eastmoney_news_news_010_613c7d07ca30",
+      "evidence_type": "news",
+      "input_source": "evidence_news",
+      "title": "伊朗最高领袖将就伊美备忘录表态",
+      "summary": "【伊朗最高领袖将就伊美备忘录表态】伊朗媒体当地时间6月18日晚报道，伊朗最高领袖穆杰塔巴·哈梅内伊将于数小时后就旨在结束战争的伊美谅解备忘录发布重要信息。",
+      "publish_time": "2026-06-19 00:43:26",
+      "source": "eastmoney_news",
+      "url": "https://finance.eastmoney.com/a/202606193776582178.html",
+      "stock": {
+        "code": "202606193776582178",
+        "name": "",
+        "market": ""
+      },
+      "impact_direction": "unclassified",
+      "impact_strength": "low",
+      "impact_score": 0,
+      "impact_logic": [],
+      "risk_notes": [],
+      "positive_triggers": [],
+      "negative_triggers": [],
+      "strong_trigger_words": [],
+      "related_concepts": [],
+      "related_stocks": [],
+      "reason": "未命中概念映射；按规则保留为热点事件，供后续人工筛选。",
+      "analysis_level": "rule_based",
+      "classification_method": "offline_rule_keyword_trigger_candidate_watchlist_match",
+      "confidence_note": "规则分析结果仅用于研究辅助和线索归档，不代表投资建议。"
+    },
+    {
+      "event_id": "hot_event_008",
+      "evidence_id": "eastmoney_news_news_009_2928dddbafd7",
+      "evidence_type": "news",
+      "input_source": "evidence_news",
+      "title": "商务部：6月20日零点起自澳大利亚进口牛肉将在现行适用关税税率基础上加征55%关税",
+      "summary": "【商务部：6月20日零点起自澳大利亚进口牛肉将在现行适用关税税率基础上加征55%关税】商务部发布2026年度牛肉保障措施执行提示信息。牛肉保障措施项下自澳大利亚进口的牛肉于2026年6月18日已达到商务部公告2025年第87号明确的该国家规定数量的100%。根据商务部公告2025年第87号，在澳大利亚牛肉进口数量达到规定数量100%的第3日起（6月20日零点起），自该国进口牛肉将在现行适用关税税率基础上加征55%关税。",
+      "publish_time": "2026-06-19 00:51:03",
+      "source": "eastmoney_news",
+      "url": "https://finance.eastmoney.com/a/202606193776583828.html",
+      "stock": {
+        "code": "202606193776583828",
+        "name": "",
+        "market": ""
+      },
+      "impact_direction": "unclassified",
+      "impact_strength": "low",
+      "impact_score": 0,
+      "impact_logic": [],
+      "risk_notes": [],
+      "positive_triggers": [],
+      "negative_triggers": [],
+      "strong_trigger_words": [],
+      "related_concepts": [],
+      "related_stocks": [],
+      "reason": "未命中概念映射；按规则保留为热点事件，供后续人工筛选。",
+      "analysis_level": "rule_based",
+      "classification_method": "offline_rule_keyword_trigger_candidate_watchlist_match",
+      "confidence_note": "规则分析结果仅用于研究辅助和线索归档，不代表投资建议。"
+    },
+    {
+      "event_id": "hot_event_009",
+      "evidence_id": "eastmoney_news_news_006_a6a02f70398a",
+      "evidence_type": "news",
+      "input_source": "evidence_news",
+      "title": "美国本周石油钻井总数433口",
+      "summary": "【数据】美国本周石油钻井总数433口，前值433口。",
+      "publish_time": "2026-06-19 01:02:29",
+      "source": "eastmoney_news",
+      "url": "https://finance.eastmoney.com/a/202606193776586848.html",
+      "stock": {
+        "code": "202606193776586848",
+        "name": "",
+        "market": ""
+      },
+      "impact_direction": "unclassified",
+      "impact_strength": "low",
+      "impact_score": 0,
+      "impact_logic": [],
+      "risk_notes": [],
+      "positive_triggers": [],
+      "negative_triggers": [],
+      "strong_trigger_words": [],
+      "related_concepts": [],
+      "related_stocks": [],
+      "reason": "未命中概念映射；按规则保留为热点事件，供后续人工筛选。",
+      "analysis_level": "rule_based",
+      "classification_method": "offline_rule_keyword_trigger_candidate_watchlist_match",
+      "confidence_note": "规则分析结果仅用于研究辅助和线索归档，不代表投资建议。"
+    },
+    {
+      "event_id": "hot_event_010",
+      "evidence_id": "eastmoney_news_news_005_128881a2adc4",
+      "evidence_type": "news",
+      "input_source": "evidence_news",
+      "title": "美国财政部拍卖240亿美元五年期通胀保值国债（TIPS）",
+      "summary": "美国财政部拍卖240亿美元五年期通胀保值国债（TIPS），得标利率1.955%，投标倍数2.61。",
+      "publish_time": "2026-06-19 01:02:45",
+      "source": "eastmoney_news",
+      "url": "https://finance.eastmoney.com/a/202606193776586738.html",
+      "stock": {
+        "code": "202606193776586738",
+        "name": "",
+        "market": ""
+      },
+      "impact_direction": "unclassified",
+      "impact_strength": "low",
+      "impact_score": 0,
+      "impact_logic": [],
+      "risk_notes": [],
+      "positive_triggers": [],
+      "negative_triggers": [],
+      "strong_trigger_words": [],
+      "related_concepts": [],
+      "related_stocks": [],
+      "reason": "未命中概念映射；按规则保留为热点事件，供后续人工筛选。",
+      "analysis_level": "rule_based",
+      "classification_method": "offline_rule_keyword_trigger_candidate_watchlist_match",
+      "confidence_note": "规则分析结果仅用于研究辅助和线索归档，不代表投资建议。"
+    },
+    {
+      "event_id": "hot_event_011",
+      "evidence_id": "eastmoney_news_news_004_5eef02582bae",
+      "evidence_type": "news",
+      "input_source": "evidence_news",
+      "title": "美解除对伊朗海上封锁",
+      "summary": "【美解除对伊朗海上封锁】当地时间6月18日，美军中央司令部在社交媒体平台发声明称，“今天，美军根据（特朗普）总统的指示，解除了对所有进出伊朗港口和沿海地区海上交通的封锁。美军没有再阻碍船只在阿拉伯湾和阿曼湾的伊朗港口往来。所有美国军事封锁行动已停止。美军舰艇将继续留在该地区，以确保协议（美伊谅解备忘录）的各方面得到遵守、执行并完全生效。”",
+      "publish_time": "2026-06-19 01:05:32",
+      "source": "eastmoney_news",
+      "url": "https://finance.eastmoney.com/a/202606193776586359.html",
+      "stock": {
+        "code": "202606193776586359",
+        "name": "",
+        "market": ""
+      },
+      "impact_direction": "unclassified",
+      "impact_strength": "low",
+      "impact_score": 0,
+      "impact_logic": [],
+      "risk_notes": [],
+      "positive_triggers": [],
+      "negative_triggers": [],
+      "strong_trigger_words": [],
+      "related_concepts": [],
+      "related_stocks": [],
+      "reason": "未命中概念映射；按规则保留为热点事件，供后续人工筛选。",
+      "analysis_level": "rule_based",
+      "classification_method": "offline_rule_keyword_trigger_candidate_watchlist_match",
+      "confidence_note": "规则分析结果仅用于研究辅助和线索归档，不代表投资建议。"
+    },
+    {
+      "event_id": "hot_event_012",
+      "evidence_id": "eastmoney_news_news_003_b385a7545544",
+      "evidence_type": "news",
+      "input_source": "evidence_news",
+      "title": "微软和亚马逊云服务据悉将面临欧盟严厉反垄断监管",
+      "summary": "【微软和亚马逊云服务据悉将面临欧盟严厉反垄断监管】在欧盟针对云计算市场的垄断力量进行初步调查后，微软公司的Azure和亚马逊云计算服务(AWS)将面临严厉的反垄断监管。据报道，欧盟委员会最早将于下周公布初步调查结果，料指出AWS和Azure可能满足欧盟《数字市场法案》(DMA)监管的条件。知情人士表示，欧盟预计将在今年年底前做出最终决定，但时间表仍可能发生变化。如果这些科技巨头的服务最终受到DMA的全面监管，它们将面临一系列义务，包括互操作性要求，以及针对客户锁定和自我优待行为的限制措施。",
+      "publish_time": "2026-06-19 01:30:11",
+      "source": "eastmoney_news",
+      "url": "https://finance.eastmoney.com/a/202606193776589239.html",
+      "stock": {
+        "code": "202606193776589239",
+        "name": "",
+        "market": ""
+      },
+      "impact_direction": "risk_alert",
+      "impact_strength": "low",
+      "impact_score": 0,
+      "impact_logic": [],
+      "risk_notes": [],
+      "positive_triggers": [],
+      "negative_triggers": [
+        "调查"
+      ],
+      "strong_trigger_words": [],
+      "related_concepts": [],
+      "related_stocks": [],
+      "reason": "未命中概念映射；按规则保留为热点事件，供后续人工筛选。",
+      "analysis_level": "rule_based",
+      "classification_method": "offline_rule_keyword_trigger_candidate_watchlist_match",
+      "confidence_note": "规则分析结果仅用于研究辅助和线索归档，不代表投资建议。"
+    },
+    {
+      "event_id": "hot_event_013",
+      "evidence_id": "eastmoney_news_news_002_492534745e54",
+      "evidence_type": "news",
+      "input_source": "evidence_news",
+      "title": "美军宣布解除对伊朗的海上封锁",
+      "summary": "【美军宣布解除对伊朗的海上封锁】美军中央司令部18日在社交媒体宣布，美军当天解除对所有进出伊朗港口和其沿海地区的海上交通封锁。",
+      "publish_time": "2026-06-19 01:46:51",
+      "source": "eastmoney_news",
+      "url": "https://finance.eastmoney.com/a/202606193776590029.html",
+      "stock": {
+        "code": "202606193776590029",
+        "name": "",
+        "market": ""
+      },
+      "impact_direction": "unclassified",
+      "impact_strength": "low",
+      "impact_score": 0,
+      "impact_logic": [],
+      "risk_notes": [],
+      "positive_triggers": [],
+      "negative_triggers": [],
+      "strong_trigger_words": [],
+      "related_concepts": [],
+      "related_stocks": [],
+      "reason": "未命中概念映射；按规则保留为热点事件，供后续人工筛选。",
+      "analysis_level": "rule_based",
+      "classification_method": "offline_rule_keyword_trigger_candidate_watchlist_match",
+      "confidence_note": "规则分析结果仅用于研究辅助和线索归档，不代表投资建议。"
+    },
+    {
+      "event_id": "hot_event_014",
+      "evidence_id": "eastmoney_news_news_001_56b3f70aac63",
+      "evidence_type": "news",
+      "input_source": "evidence_news",
+      "title": "世界气象组织：去年极端天气影响非洲超千万人",
+      "summary": "【世界气象组织：去年极端天气影响非洲超千万人】18日，世界气象组织在埃塞俄比亚首都亚的斯亚贝巴发布《2025年非洲气候状况》报告，数据显示去年极端天气和气候相关事件影响非洲至少1300万人，报告的死亡人数超过3000人，对经济社会各领域均造成连锁影响。（央视新闻）",
+      "publish_time": "2026-06-19 01:48:51",
+      "source": "eastmoney_news",
+      "url": "https://finance.eastmoney.com/a/202606193776589826.html",
+      "stock": {
+        "code": "202606193776589826",
+        "name": "",
+        "market": ""
+      },
+      "impact_direction": "unclassified",
+      "impact_strength": "low",
+      "impact_score": 0,
+      "impact_logic": [],
+      "risk_notes": [],
+      "positive_triggers": [],
+      "negative_triggers": [],
+      "strong_trigger_words": [],
+      "related_concepts": [],
+      "related_stocks": [],
+      "reason": "未命中概念映射；按规则保留为热点事件，供后续人工筛选。",
+      "analysis_level": "rule_based",
+      "classification_method": "offline_rule_keyword_trigger_candidate_watchlist_match",
+      "confidence_note": "规则分析结果仅用于研究辅助和线索归档，不代表投资建议。"
+    }
+  ],
+  "warnings": [],
+  "errors": [],
+  "disclaimer": "规则版热点分析仅用于公开信息整理和研究辅助，不构成投资建议、交易建议或交易信号，不承诺任何回报。"
+}

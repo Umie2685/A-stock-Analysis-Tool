@@ -1,20 +1,233 @@
 project:
   name: AStockFastLane
-  stage: MVP0-001
+  stage: MVP3-local-demo
+  status: active
+  last_reviewed: 2026-06-19
+  description: "A-share public-information collection, rule-based hot-event analysis, candidate watchlist aggregation, and local dashboard demo."
+  boundary: "Research assistance only. No investment advice, no trading advice, no trading signals, no automatic trading, and no return promise."
+
+runtime:
+  python_dependencies: "standard-library-only"
+  third_party_runtime_dependencies: false
+  database: false
+  llm_integration: false
+  dashboard:
+    enabled: true
+    entrypoint: "python scripts/run_web_dashboard.py"
+    local_url: "http://127.0.0.1:8000"
+
+entrypoints:
+  validate_project: "python scripts/check_project.py"
+  validate_watchlist: "python scripts/check_watchlist.py"
+  refresh_mvp2_pipeline: "python scripts/run_mvp2_pipeline.py"
+  offline_report_only: "python scripts/run_offline_report.py"
+  analyze_hot_events: "python scripts/analysis/analyze_hot_events.py"
+  build_candidate_watchlist: "python scripts/analysis/build_candidate_watchlist.py"
+  run_dashboard: "python scripts/run_web_dashboard.py"
+
+source_access_policy:
+  default_mode: "small auditable batches"
+  network_refresh_entries:
+    - "scripts/probes/test_eastmoney_news_probe.py"
+    - "scripts/probes/test_cninfo_announcement_probe.py"
+    - "scripts/probes/test_eastmoney_report_probe.py"
+    - "scripts/run_mvp1_pipeline.py"
+    - "scripts/run_mvp2_pipeline.py"
+  offline_entries:
+    - "scripts/run_offline_report.py"
+    - "scripts/analysis/analyze_hot_events.py"
+    - "scripts/analysis/build_candidate_watchlist.py"
+    - "scripts/run_web_dashboard.py"
+  notes:
+    - "Keep request volume small."
+    - "Use explicit timeouts."
+    - "Do not download or parse PDFs unless a future task explicitly adds that scope."
+    - "Keep all generated reports labeled as public-information organization and research assistance."
 
 data_sources:
   eastmoney_news:
-    enabled: false
-    status: placeholder
-    note: "Endpoint not implemented in MVP0-001."
+    enabled: true
+    status: implemented
+    source_type: public_http_endpoint
+    network_access: true
+    endpoint_note: "Eastmoney global fast-news minimal probe."
+    probe_entrypoint: "python scripts/probes/test_eastmoney_news_probe.py"
+    cache_output: "data/cache/eastmoney_news_probe_latest.json"
+    raw_output_pattern: "data/raw/eastmoney_news_probe_YYYYMMDD.json"
+    evidence_type: news
+    batch_scope: "small page-size probe"
 
   cninfo_announcement:
-    enabled: false
-    status: placeholder
-    note: "Endpoint not implemented in MVP0-001."
+    enabled: true
+    status: implemented_watchlist_aware
+    source_type: public_http_endpoint
+    network_access: true
+    endpoint_note: "CNInfo announcement metadata probe driven by enabled symbols in config/watchlist.json."
+    probe_entrypoint: "python scripts/probes/test_cninfo_announcement_probe.py"
+    watchlist_input: "config/watchlist.json"
+    cache_output: "data/cache/cninfo_announcement_probe_latest.json"
+    raw_output_pattern: "data/raw/cninfo_announcement_probe_YYYYMMDD.json"
+    evidence_type: announcement
+    preserved_query_metadata:
+      - query_code
+      - query_name
+      - query_market
+      - query_orgId
+    boundary: "Announcement metadata only; PDFs are not downloaded or parsed."
 
   eastmoney_report:
-    enabled: false
-    status: placeholder
-    note: "Endpoint not implemented in MVP0-001."
+    enabled: true
+    status: implemented_watchlist_aware
+    source_type: public_http_endpoint
+    network_access: true
+    endpoint_note: "Eastmoney research-report metadata probe driven by enabled symbols in config/watchlist.json."
+    probe_entrypoint: "python scripts/probes/test_eastmoney_report_probe.py"
+    watchlist_input: "config/watchlist.json"
+    cache_output: "data/cache/eastmoney_report_probe_latest.json"
+    raw_output_pattern: "data/raw/eastmoney_report_probe_YYYYMMDD.json"
+    evidence_type: research_report
+    preserved_query_metadata:
+      - query_code
+      - query_name
+      - query_market
+      - rating
+      - target_price
+      - institution_opinion
+    boundary: "Research-report metadata only; report PDFs and full text are not downloaded or parsed; ratings remain source metadata only."
 
+  manual_hot_events:
+    enabled: true
+    status: implemented
+    source_type: local_json
+    network_access: false
+    input: "data/manual/hot_events_manual.json"
+    consumed_by: "scripts/analysis/analyze_hot_events.py"
+    evidence_type: manual_hot_event
+
+  concept_map:
+    enabled: true
+    status: implemented
+    source_type: local_json
+    network_access: false
+    input: "config/concept_map.json"
+    consumed_by:
+      - "scripts/analysis/analyze_hot_events.py"
+      - "scripts/analysis/build_candidate_watchlist.py"
+    current_concepts:
+      - "AI算力"
+      - "光通信"
+      - "PCB"
+      - "数据中心"
+      - "有色金属"
+      - "消费电子"
+      - "创新药"
+      - "核电"
+      - "商业航天"
+      - "机器人"
+      - "半导体国产替代"
+      - "固态电池"
+      - "低空经济"
+      - "军工"
+    boundary: "Concept relevance mapping only; relevance_score is concept relevance, not investment value."
+
+processing_layers:
+  fast_evidence_pack:
+    enabled: true
+    status: implemented
+    network_access: false
+    entrypoint: "python scripts/pipeline/build_fast_evidence_pack.py"
+    inputs:
+      - "data/cache/eastmoney_news_probe_latest.json"
+      - "data/cache/cninfo_announcement_probe_latest.json"
+      - "data/cache/eastmoney_report_probe_latest.json"
+    outputs:
+      latest: "data/evidence/fast_evidence_pack_latest.json"
+      dated_pattern: "data/evidence/fast_evidence_pack_YYYYMMDD.json"
+    latest_verified_counts:
+      news: 10
+      announcement: 10
+      research_report: 10
+      total: 30
+
+  markdown_fast_report:
+    enabled: true
+    status: implemented
+    network_access: false
+    entrypoint: "python scripts/pipeline/generate_fast_report.py"
+    input: "data/evidence/fast_evidence_pack_latest.json"
+    outputs:
+      latest: "reports/fast_report_latest.md"
+      dated_pattern: "reports/fast_report_YYYYMMDD.md"
+
+  hot_event_analysis:
+    enabled: true
+    status: implemented_rule_based
+    network_access: false
+    entrypoint: "python scripts/analysis/analyze_hot_events.py"
+    inputs:
+      - "data/evidence/fast_evidence_pack_latest.json"
+      - "data/manual/hot_events_manual.json"
+      - "config/concept_map.json"
+    outputs:
+      latest_json: "data/analysis/hot_events_latest.json"
+      latest_markdown: "reports/hot_events_latest.md"
+      dated_json_pattern: "data/analysis/hot_events_YYYYMMDD.json"
+      dated_markdown_pattern: "reports/hot_events_YYYYMMDD.md"
+    analysis_level: rule_based
+    latest_verified_counts:
+      hot_events: 14
+      evidence_news: 10
+      manual_hot_event: 4
+      high: 4
+      medium: 2
+      low: 8
+
+  candidate_watchlist:
+    enabled: true
+    status: implemented_rule_based
+    network_access: false
+    entrypoint: "python scripts/analysis/build_candidate_watchlist.py"
+    inputs:
+      - "data/analysis/hot_events_latest.json"
+      - "config/watchlist.json"
+    outputs:
+      latest_json: "data/analysis/candidate_watchlist_latest.json"
+      latest_markdown: "reports/candidate_watchlist_latest.md"
+      dated_json_pattern: "data/analysis/candidate_watchlist_YYYYMMDD.json"
+      dated_markdown_pattern: "reports/candidate_watchlist_YYYYMMDD.md"
+    latest_verified_counts:
+      candidates: 25
+      in_watchlist: 1
+    boundary: "Candidate observation stocks are for research context only; heat_score is a rule-based relevance score, not a trading signal."
+
+  local_dashboard:
+    enabled: true
+    status: implemented
+    network_access: false
+    entrypoint: "python scripts/run_web_dashboard.py"
+    local_url: "http://127.0.0.1:8000"
+    reads:
+      - "config/watchlist.json"
+      - "data/evidence/fast_evidence_pack_latest.json"
+      - "data/analysis/hot_events_latest.json"
+      - "data/analysis/candidate_watchlist_latest.json"
+      - "reports/fast_report_latest.md"
+      - "reports/hot_events_latest.md"
+      - "reports/candidate_watchlist_latest.md"
+    routes:
+      - "/"
+      - "/fast-report"
+      - "/hot-events-report"
+      - "/candidate-watchlist"
+
+known_documentation_notes:
+  main_docs_to_read_first:
+    - "README.md"
+    - "docs/current_progress.md"
+    - "docs/handoff_for_new_chat.md"
+    - "docs/endpoint_probe_results.md"
+    - "docs/mvp2_release_notes.md"
+    - "docs/mvp3_hot_events_quality_notes.md"
+    - "docs/mvp3_candidate_watchlist_notes.md"
+    - "docs/mvp3_dashboard_hot_events_notes.md"
+  warning: "This file is the current MVP3 source/config summary. Older docs may still mention sealed MVP2 or MVP0 context for historical reasons."

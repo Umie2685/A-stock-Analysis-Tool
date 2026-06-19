@@ -1,0 +1,188 @@
+{
+  "version": 3,
+  "description": "MVP3 offline concept map. related_stocks are candidate watchlist links for research assistance only. relevance_score is concept relevance from 1 to 5 and does not represent investment value.",
+  "concepts": [
+    {
+      "concept": "AI算力",
+      "keywords": ["AI算力", "算力", "智算", "大模型", "GPU", "AI服务器", "推理集群", "训练集群"],
+      "impact_logic": "AI模型训练和推理需求变化可能带动服务器、芯片、光模块、液冷和数据中心等环节的公开信息研究。",
+      "typical_positive_triggers": ["订单增长", "资本开支增加", "模型发布", "算力集群建设", "政策支持"],
+      "typical_negative_triggers": ["资本开支放缓", "供应链扰动", "商业化不及预期", "算力成本上升"],
+      "risk_notes": ["算力主题覆盖链条较长，需要区分真实业务暴露和概念关联", "单一热点不代表公司业绩兑现"],
+      "related_stocks": [
+        {"code": "000977", "name": "浪潮信息", "role": "AI服务器候选观察公司", "relevance_score": 4, "reason": "服务器和算力基础设施相关", "risk_note": "需关注订单节奏、毛利率和供应链扰动"},
+        {"code": "688256", "name": "寒武纪", "role": "AI芯片候选观察公司", "relevance_score": 4, "reason": "AI芯片和智能计算相关", "risk_note": "需关注研发投入、客户验证和盈利兑现节奏"},
+        {"code": "300308", "name": "中际旭创", "role": "高速光模块候选观察公司", "relevance_score": 5, "reason": "AI算力集群光模块相关", "risk_note": "需关注海外需求、产品迭代和估值波动"}
+      ]
+    },
+    {
+      "concept": "光通信",
+      "keywords": ["光通信", "光模块", "CPO", "硅光", "光芯片", "800G", "1.6T", "高速互连"],
+      "impact_logic": "数据中心和AI集群的高速互连需求可能影响光模块、光器件、光芯片和测试环节的研究关注。",
+      "typical_positive_triggers": ["订单增长", "产品升级", "客户认证", "数据中心资本开支增加"],
+      "typical_negative_triggers": ["价格下行", "客户需求放缓", "技术路线变化", "供应链扰动"],
+      "risk_notes": ["光模块迭代快，需关注产品结构和客户集中度", "海外需求波动可能放大估值波动"],
+      "related_stocks": [
+        {"code": "300308", "name": "中际旭创", "role": "光模块候选观察公司", "relevance_score": 5, "reason": "高速光模块相关", "risk_note": "需关注客户需求和产品价格变化"},
+        {"code": "300502", "name": "新易盛", "role": "光模块候选观察公司", "relevance_score": 5, "reason": "高速光模块相关", "risk_note": "需关注海外客户订单和产能节奏"},
+        {"code": "300394", "name": "天孚通信", "role": "光器件候选观察公司", "relevance_score": 4, "reason": "光器件和高速互连相关", "risk_note": "需关注产品认证和订单兑现"}
+      ]
+    },
+    {
+      "concept": "PCB",
+      "keywords": ["PCB", "印制电路板", "HDI", "IC载板", "服务器PCB", "高频高速", "覆铜板"],
+      "impact_logic": "AI服务器、通信设备和消费电子升级可能带动PCB、覆铜板和载板环节的公开信息研究。",
+      "typical_positive_triggers": ["订单增长", "产品升级", "产能扩张", "服务器需求增长"],
+      "typical_negative_triggers": ["下游需求放缓", "原材料价格波动", "价格竞争", "产能利用率下降"],
+      "risk_notes": ["PCB景气度受下游周期和产品结构影响明显", "扩产节奏和盈利能力需持续验证"],
+      "related_stocks": [
+        {"code": "002463", "name": "沪电股份", "role": "服务器PCB候选观察公司", "relevance_score": 5, "reason": "高端PCB和服务器链条相关", "risk_note": "需关注客户需求和产能利用率"},
+        {"code": "002916", "name": "深南电路", "role": "PCB与封装基板候选观察公司", "relevance_score": 4, "reason": "PCB和封装基板相关", "risk_note": "需关注通信和封装基板景气度"},
+        {"code": "603228", "name": "景旺电子", "role": "PCB候选观察公司", "relevance_score": 3, "reason": "多领域PCB制造相关", "risk_note": "需关注下游需求分化"}
+      ]
+    },
+    {
+      "concept": "数据中心",
+      "keywords": ["数据中心", "IDC", "智算中心", "算力中心", "液冷", "服务器机房", "PUE"],
+      "impact_logic": "AI算力建设和云厂商资本开支变化可能带动数据中心、液冷、电源和运维环节的研究关注。",
+      "typical_positive_triggers": ["算力中心建设", "资本开支增加", "液冷方案落地", "政策支持"],
+      "typical_negative_triggers": ["建设进度放缓", "电力成本上升", "利用率不足", "客户需求波动"],
+      "risk_notes": ["数据中心项目投入大，回报周期和利用率需要跟踪", "液冷等技术路线仍有项目差异"],
+      "related_stocks": [
+        {"code": "300442", "name": "润泽科技", "role": "数据中心服务候选观察公司", "relevance_score": 4, "reason": "数据中心和算力基础设施相关", "risk_note": "需关注上架率、客户结构和资本开支"},
+        {"code": "603881", "name": "数据港", "role": "IDC候选观察公司", "relevance_score": 3, "reason": "数据中心运营相关", "risk_note": "需关注客户集中度和项目回报周期"},
+        {"code": "002837", "name": "英维克", "role": "温控和液冷候选观察公司", "relevance_score": 4, "reason": "数据中心温控和液冷相关", "risk_note": "需关注液冷渗透和订单兑现"}
+      ]
+    },
+    {
+      "concept": "有色金属",
+      "keywords": ["有色金属", "铜", "铝", "钨", "钼", "锂", "稀土", "金属涨价", "资源品"],
+      "impact_logic": "资源价格、供给扰动和新能源需求变化可能影响有色金属采选、冶炼和材料环节的研究关注。",
+      "typical_positive_triggers": ["金属涨价", "供给收缩", "需求增长", "资源并购", "库存下降"],
+      "typical_negative_triggers": ["价格回落", "需求不及预期", "库存上升", "政策调控", "海外供给释放"],
+      "risk_notes": ["资源品价格波动较大，相关公司盈利对价格敏感", "周期波动可能显著影响估值"],
+      "related_stocks": [
+        {"code": "601899", "name": "紫金矿业", "role": "铜金资源候选观察公司", "relevance_score": 5, "reason": "铜、金等资源品相关", "risk_note": "需关注金属价格、项目进度和海外经营风险"},
+        {"code": "603799", "name": "华友钴业", "role": "新能源金属材料候选观察公司", "relevance_score": 4, "reason": "钴镍锂材料链条相关", "risk_note": "需关注金属价格和下游需求波动"},
+        {"code": "600111", "name": "北方稀土", "role": "稀土资源候选观察公司", "relevance_score": 4, "reason": "稀土资源和材料相关", "risk_note": "需关注稀土价格和政策节奏"}
+      ]
+    },
+    {
+      "concept": "消费电子",
+      "keywords": ["消费电子", "手机", "AI手机", "折叠屏", "MR", "AR", "可穿戴", "端侧AI"],
+      "impact_logic": "终端创新、AI手机和可穿戴设备迭代可能影响零部件、组装、声学光学和结构件环节的研究关注。",
+      "typical_positive_triggers": ["新品发布", "出货改善", "订单增长", "端侧AI落地", "产品升级"],
+      "typical_negative_triggers": ["需求疲弱", "库存压力", "价格竞争", "新品不及预期"],
+      "risk_notes": ["消费电子链条受终端销量和客户结构影响较大", "新品热度不等于持续订单"],
+      "related_stocks": [
+        {"code": "002475", "name": "立讯精密", "role": "消费电子制造候选观察公司", "relevance_score": 4, "reason": "消费电子组装和零部件相关", "risk_note": "需关注客户集中度和订单节奏"},
+        {"code": "002241", "name": "歌尔股份", "role": "声学与智能硬件候选观察公司", "relevance_score": 4, "reason": "声学、VR/AR和智能硬件相关", "risk_note": "需关注终端需求和客户订单波动"},
+        {"code": "300433", "name": "蓝思科技", "role": "外观结构件候选观察公司", "relevance_score": 3, "reason": "消费电子结构件相关", "risk_note": "需关注产品价格和产能利用率"}
+      ]
+    },
+    {
+      "concept": "创新药",
+      "keywords": ["创新药", "新药", "临床", "IND", "NDA", "BD交易", "医保谈判", "出海授权"],
+      "impact_logic": "临床进展、审评审批、授权交易和医保支付变化可能影响创新药产业链的公开信息研究。",
+      "typical_positive_triggers": ["临床数据积极", "获批上市", "授权交易", "医保准入", "适应症扩展"],
+      "typical_negative_triggers": ["临床失败", "审批延迟", "医保降价", "研发投入压力", "竞争加剧"],
+      "risk_notes": ["创新药研发周期长且不确定性高", "单个管线进展对估值影响可能较大"],
+      "related_stocks": [
+        {"code": "600276", "name": "恒瑞医药", "role": "创新药候选观察公司", "relevance_score": 5, "reason": "创新药研发和商业化相关", "risk_note": "需关注管线进展、医保价格和竞争格局"},
+        {"code": "688235", "name": "百济神州", "role": "创新药候选观察公司", "relevance_score": 5, "reason": "肿瘤创新药和全球化相关", "risk_note": "需关注研发投入和商业化兑现"},
+        {"code": "688331", "name": "荣昌生物", "role": "生物创新药候选观察公司", "relevance_score": 4, "reason": "抗体药物和创新药管线相关", "risk_note": "需关注临床结果和现金流压力"}
+      ]
+    },
+    {
+      "concept": "核电",
+      "keywords": ["核电", "核能", "核岛", "核级设备", "核准", "华龙一号", "小堆", "核燃料"],
+      "impact_logic": "核电项目核准、设备招标和国产化进展可能带动核电设备、材料和运营环节的研究关注。",
+      "typical_positive_triggers": ["项目核准", "设备订单", "装机增长", "国产化推进", "政策支持"],
+      "typical_negative_triggers": ["项目延期", "安全事件", "审批放缓", "成本上升"],
+      "risk_notes": ["核电项目周期长，收入确认节奏需要跟踪", "安全监管和项目审批对产业节奏影响较大"],
+      "related_stocks": [
+        {"code": "601985", "name": "中国核电", "role": "核电运营候选观察公司", "relevance_score": 4, "reason": "核电运营相关", "risk_note": "需关注装机投产和电价机制"},
+        {"code": "003816", "name": "中国广核", "role": "核电运营候选观察公司", "relevance_score": 4, "reason": "核电运营相关", "risk_note": "需关注项目投产节奏和安全运营"},
+        {"code": "002318", "name": "久立特材", "role": "核电材料候选观察公司", "relevance_score": 3, "reason": "核电用特材相关", "risk_note": "需关注订单节奏和材料认证"}
+      ]
+    },
+    {
+      "concept": "商业航天",
+      "keywords": ["商业航天", "卫星", "火箭", "星座", "低轨", "卫星互联网", "遥感", "航天发射"],
+      "impact_logic": "卫星星座建设、火箭发射和卫星互联网应用落地可能影响航天制造、测控、遥感和通信环节的研究关注。",
+      "typical_positive_triggers": ["发射成功", "星座建设", "订单增长", "政策支持", "应用落地"],
+      "typical_negative_triggers": ["发射延期", "技术验证不及预期", "商业化放缓", "项目预算变化"],
+      "risk_notes": ["商业航天仍处于建设和验证阶段，商业模式兑现节奏需观察", "项目进度和订单披露可能不连续"],
+      "related_stocks": [
+        {"code": "600118", "name": "中国卫星", "role": "卫星制造候选观察公司", "relevance_score": 4, "reason": "卫星研制和航天产业链相关", "risk_note": "需关注项目节奏和订单披露"},
+        {"code": "002465", "name": "海格通信", "role": "卫星通信候选观察公司", "relevance_score": 3, "reason": "通信和北斗应用相关", "risk_note": "需关注项目交付和需求兑现"},
+        {"code": "300474", "name": "景嘉微", "role": "航天电子候选观察公司", "relevance_score": 3, "reason": "图形处理和航天电子相关", "risk_note": "需关注产品验证和需求波动"}
+      ]
+    },
+    {
+      "concept": "机器人",
+      "keywords": ["机器人", "人形机器人", "具身智能", "减速器", "执行器", "伺服", "谐波", "丝杠"],
+      "impact_logic": "机器人产业催化可能带动减速器、执行器、伺服系统、传感器和控制器等环节的公开信息研究。",
+      "typical_positive_triggers": ["政策支持", "订单增长", "产业资本投入", "新品发布", "量产进展"],
+      "typical_negative_triggers": ["商业化不及预期", "订单兑现不足", "估值波动", "技术路线变化"],
+      "risk_notes": ["概念热度可能先于业绩兑现", "不同零部件环节的受益程度差异较大"],
+      "related_stocks": [
+        {"code": "688017", "name": "绿的谐波", "role": "谐波减速器候选观察公司", "relevance_score": 5, "reason": "谐波减速器相关", "risk_note": "需关注订单兑现、产能节奏和估值波动"},
+        {"code": "002050", "name": "三花智控", "role": "机器人执行器候选观察公司", "relevance_score": 4, "reason": "执行器和热管理链条相关", "risk_note": "需关注机器人业务占比和客户验证"},
+        {"code": "002747", "name": "埃斯顿", "role": "工业机器人候选观察公司", "relevance_score": 4, "reason": "机器人本体和自动化相关", "risk_note": "需关注行业资本开支和盈利修复"}
+      ]
+    },
+    {
+      "concept": "半导体国产替代",
+      "keywords": ["半导体", "国产替代", "芯片", "晶圆", "光刻", "封测", "设备材料", "出口管制"],
+      "impact_logic": "供应链安全、技术封锁或国产设备材料验证进展，可能提升半导体国产替代链条研究关注度。",
+      "typical_positive_triggers": ["政策支持", "国产设备验证", "订单增长", "进口替代加速", "扩产"],
+      "typical_negative_triggers": ["技术验证不及预期", "出口管制升级", "行业库存压力", "资本开支放缓"],
+      "risk_notes": ["国产替代链条长，单一新闻对公司业绩影响需要后续验证", "技术壁垒和客户认证周期可能较长"],
+      "related_stocks": [
+        {"code": "688012", "name": "中微公司", "role": "半导体设备候选观察公司", "relevance_score": 5, "reason": "刻蚀设备等半导体设备相关", "risk_note": "需关注客户验证、订单节奏和技术迭代"},
+        {"code": "002371", "name": "北方华创", "role": "半导体设备候选观察公司", "relevance_score": 5, "reason": "半导体设备国产替代相关", "risk_note": "需关注扩产周期和订单兑现"},
+        {"code": "688981", "name": "中芯国际", "role": "晶圆制造候选观察公司", "relevance_score": 4, "reason": "晶圆制造和国产供应链相关", "risk_note": "需关注周期波动、资本开支和技术限制"}
+      ]
+    },
+    {
+      "concept": "固态电池",
+      "keywords": ["固态电池", "半固态", "电解质", "硫化物", "锂电", "电池材料", "新能源车", "量产"],
+      "impact_logic": "电池技术路线、量产进展和车企验证信息，可能带动固态电池材料、设备和整车验证环节的研究关注。",
+      "typical_positive_triggers": ["量产进展", "车企验证", "材料突破", "产业资本投入", "订单增长"],
+      "typical_negative_triggers": ["量产延期", "成本过高", "安全验证不足", "竞争路线变化"],
+      "risk_notes": ["固态电池产业化节奏存在不确定性", "技术新闻不等于商业化订单"],
+      "related_stocks": [
+        {"code": "300750", "name": "宁德时代", "role": "电池技术路线候选观察公司", "relevance_score": 4, "reason": "动力电池和新技术路线相关", "risk_note": "需关注技术路线、资本开支和下游需求"},
+        {"code": "002074", "name": "国轩高科", "role": "电池制造候选观察公司", "relevance_score": 3, "reason": "电池制造和固态电池研发相关", "risk_note": "需关注量产节奏和盈利能力"},
+        {"code": "300073", "name": "当升科技", "role": "电池材料候选观察公司", "relevance_score": 3, "reason": "锂电材料相关", "risk_note": "需关注材料价格和客户需求"}
+      ]
+    },
+    {
+      "concept": "低空经济",
+      "keywords": ["低空经济", "eVTOL", "无人机", "通航", "飞行汽车", "空管", "适航"],
+      "impact_logic": "政策试点、适航认证和商业场景落地信息，可能推动低空经济产业链研究热度。",
+      "typical_positive_triggers": ["政策试点", "适航进展", "订单增长", "运营场景落地", "基础设施建设"],
+      "typical_negative_triggers": ["监管不确定", "安全事故", "商业化延期", "基础设施不足"],
+      "risk_notes": ["低空经济仍处于场景验证和监管完善阶段", "产业链兑现节奏可能分化"],
+      "related_stocks": [
+        {"code": "002085", "name": "万丰奥威", "role": "低空飞行器候选观察公司", "relevance_score": 4, "reason": "通航和低空飞行器相关", "risk_note": "需关注业务占比、订单兑现和政策节奏"},
+        {"code": "002179", "name": "中航光电", "role": "连接器候选观察公司", "relevance_score": 3, "reason": "航空航天连接器相关", "risk_note": "需关注低空业务实际暴露程度"},
+        {"code": "600038", "name": "中直股份", "role": "航空装备候选观察公司", "relevance_score": 3, "reason": "航空装备制造相关", "risk_note": "需关注订单节奏和产业政策变化"}
+      ]
+    },
+    {
+      "concept": "军工",
+      "keywords": ["军工", "国防", "装备", "航空发动机", "导弹", "无人装备", "军贸", "军费"],
+      "impact_logic": "国防装备、军贸和无人化装备信息，可能提升军工产业链公开信息研究关注。",
+      "typical_positive_triggers": ["订单增长", "装备列装", "军贸进展", "政策支持", "军费增长"],
+      "typical_negative_triggers": ["交付延期", "预算节奏变化", "供应链扰动", "估值波动"],
+      "risk_notes": ["军工订单和交付节奏披露有限", "主题热度需要结合公告和财务数据验证"],
+      "related_stocks": [
+        {"code": "600760", "name": "中航沈飞", "role": "航空装备候选观察公司", "relevance_score": 4, "reason": "航空装备制造相关", "risk_note": "需关注交付节奏和订单披露"},
+        {"code": "600893", "name": "航发动力", "role": "航空发动机候选观察公司", "relevance_score": 4, "reason": "航空发动机产业链相关", "risk_note": "需关注研发交付和盈利节奏"},
+        {"code": "002179", "name": "中航光电", "role": "军工连接器候选观察公司", "relevance_score": 4, "reason": "军工电子连接器相关", "risk_note": "需关注军工订单和民品景气度"}
+      ]
+    }
+  ]
+}

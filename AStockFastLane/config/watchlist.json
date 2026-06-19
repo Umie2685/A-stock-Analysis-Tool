@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "description": "AStockFastLane MVP2 watchlist. This file controls which A-share symbols are included in batch probes.",
+  "items": [
+    {
+      "code": "688017",
+      "name": "绿的谐波",
+      "market": "SH",
+      "enabled": true,
+      "orgId": "9900041602",
+      "note": "MVP1 sample symbol"
+    }
+  ]
+}

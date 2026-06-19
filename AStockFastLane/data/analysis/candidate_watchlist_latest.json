@@ -1,0 +1,781 @@
+{
+  "schema_version": 1,
+  "analysis_name": "candidate_watchlist",
+  "generated_at": "2026-06-19T01:56:50.787384+08:00",
+  "source_hot_events": "data/analysis/hot_events_latest.json",
+  "source_watchlist": "config/watchlist.json",
+  "candidate_count": 25,
+  "in_watchlist_count": 1,
+  "not_in_watchlist_count": 24,
+  "sort_rule": "heat_score_desc",
+  "score_rule": "event strength weight + event count + relevance score",
+  "candidates": [
+    {
+      "code": "601899",
+      "name": "紫金矿业",
+      "related_concepts": [
+        "有色金属"
+      ],
+      "source_event_titles": [
+        "有色金属资源品价格波动带动周期线索",
+        "LME期铜收跌124美元"
+      ],
+      "source_event_ids": [
+        "hot_event_004",
+        "hot_event_005"
+      ],
+      "roles": [
+        "铜金资源候选观察公司"
+      ],
+      "reasons": [
+        "铜、金等资源品相关"
+      ],
+      "risk_notes": [
+        "需关注金属价格、项目进度和海外经营风险"
+      ],
+      "in_watchlist": false,
+      "label": "candidate_watchlist",
+      "heat_score": 25.5,
+      "event_count": 2,
+      "max_impact_strength": "high",
+      "relevance_score_max": 5,
+      "relevance_score_avg": 5
+    },
+    {
+      "code": "600111",
+      "name": "北方稀土",
+      "related_concepts": [
+        "有色金属"
+      ],
+      "source_event_titles": [
+        "有色金属资源品价格波动带动周期线索",
+        "LME期铜收跌124美元"
+      ],
+      "source_event_ids": [
+        "hot_event_004",
+        "hot_event_005"
+      ],
+      "roles": [
+        "稀土资源候选观察公司"
+      ],
+      "reasons": [
+        "稀土资源和材料相关"
+      ],
+      "risk_notes": [
+        "需关注稀土价格和政策节奏"
+      ],
+      "in_watchlist": false,
+      "label": "candidate_watchlist",
+      "heat_score": 23.0,
+      "event_count": 2,
+      "max_impact_strength": "high",
+      "relevance_score_max": 4,
+      "relevance_score_avg": 4
+    },
+    {
+      "code": "603799",
+      "name": "华友钴业",
+      "related_concepts": [
+        "有色金属"
+      ],
+      "source_event_titles": [
+        "有色金属资源品价格波动带动周期线索",
+        "LME期铜收跌124美元"
+      ],
+      "source_event_ids": [
+        "hot_event_004",
+        "hot_event_005"
+      ],
+      "roles": [
+        "新能源金属材料候选观察公司"
+      ],
+      "reasons": [
+        "钴镍锂材料链条相关"
+      ],
+      "risk_notes": [
+        "需关注金属价格和下游需求波动"
+      ],
+      "in_watchlist": false,
+      "label": "candidate_watchlist",
+      "heat_score": 23.0,
+      "event_count": 2,
+      "max_impact_strength": "high",
+      "relevance_score_max": 4,
+      "relevance_score_avg": 4
+    },
+    {
+      "code": "002179",
+      "name": "中航光电",
+      "related_concepts": [
+        "商业航天",
+        "低空经济",
+        "军工"
+      ],
+      "source_event_titles": [
+        "商业航天和低空经济政策试点热度提升",
+        "德国派遣舰艇以备霍尔木兹海峡扫雷任务"
+      ],
+      "source_event_ids": [
+        "hot_event_003",
+        "hot_event_006"
+      ],
+      "roles": [
+        "连接器候选观察公司",
+        "军工连接器候选观察公司"
+      ],
+      "reasons": [
+        "航空航天连接器相关",
+        "军工电子连接器相关"
+      ],
+      "risk_notes": [
+        "需关注低空业务实际暴露程度",
+        "需关注军工订单和民品景气度"
+      ],
+      "in_watchlist": false,
+      "label": "candidate_watchlist",
+      "heat_score": 22.5,
+      "event_count": 2,
+      "max_impact_strength": "high",
+      "relevance_score_max": 4,
+      "relevance_score_avg": 3.5
+    },
+    {
+      "code": "300308",
+      "name": "中际旭创",
+      "related_concepts": [
+        "AI算力",
+        "光通信",
+        "数据中心"
+      ],
+      "source_event_titles": [
+        "AI算力与光通信需求升温，数据中心高速互连继续扩容"
+      ],
+      "source_event_ids": [
+        "hot_event_001"
+      ],
+      "roles": [
+        "高速光模块候选观察公司"
+      ],
+      "reasons": [
+        "AI算力集群光模块相关"
+      ],
+      "risk_notes": [
+        "需关注海外需求、产品迭代和估值波动"
+      ],
+      "in_watchlist": false,
+      "label": "candidate_watchlist",
+      "heat_score": 20.5,
+      "event_count": 1,
+      "max_impact_strength": "high",
+      "relevance_score_max": 5,
+      "relevance_score_avg": 5
+    },
+    {
+      "code": "300502",
+      "name": "新易盛",
+      "related_concepts": [
+        "AI算力",
+        "光通信",
+        "数据中心"
+      ],
+      "source_event_titles": [
+        "AI算力与光通信需求升温，数据中心高速互连继续扩容"
+      ],
+      "source_event_ids": [
+        "hot_event_001"
+      ],
+      "roles": [
+        "光模块候选观察公司"
+      ],
+      "reasons": [
+        "高速光模块相关"
+      ],
+      "risk_notes": [
+        "需关注海外客户订单和产能节奏"
+      ],
+      "in_watchlist": false,
+      "label": "candidate_watchlist",
+      "heat_score": 20.5,
+      "event_count": 1,
+      "max_impact_strength": "high",
+      "relevance_score_max": 5,
+      "relevance_score_avg": 5
+    },
+    {
+      "code": "688017",
+      "name": "绿的谐波",
+      "related_concepts": [
+        "机器人",
+        "固态电池"
+      ],
+      "source_event_titles": [
+        "机器人产业链出现新品发布和量产进展线索"
+      ],
+      "source_event_ids": [
+        "hot_event_002"
+      ],
+      "roles": [
+        "谐波减速器候选观察公司"
+      ],
+      "reasons": [
+        "谐波减速器相关"
+      ],
+      "risk_notes": [
+        "需关注订单兑现、产能节奏和估值波动"
+      ],
+      "in_watchlist": true,
+      "label": "candidate_watchlist",
+      "heat_score": 20.5,
+      "event_count": 1,
+      "max_impact_strength": "high",
+      "relevance_score_max": 5,
+      "relevance_score_avg": 5
+    },
+    {
+      "code": "000977",
+      "name": "浪潮信息",
+      "related_concepts": [
+        "AI算力",
+        "光通信",
+        "数据中心"
+      ],
+      "source_event_titles": [
+        "AI算力与光通信需求升温，数据中心高速互连继续扩容"
+      ],
+      "source_event_ids": [
+        "hot_event_001"
+      ],
+      "roles": [
+        "AI服务器候选观察公司"
+      ],
+      "reasons": [
+        "服务器和算力基础设施相关"
+      ],
+      "risk_notes": [
+        "需关注订单节奏、毛利率和供应链扰动"
+      ],
+      "in_watchlist": false,
+      "label": "candidate_watchlist",
+      "heat_score": 18.0,
+      "event_count": 1,
+      "max_impact_strength": "high",
+      "relevance_score_max": 4,
+      "relevance_score_avg": 4
+    },
+    {
+      "code": "002050",
+      "name": "三花智控",
+      "related_concepts": [
+        "机器人",
+        "固态电池"
+      ],
+      "source_event_titles": [
+        "机器人产业链出现新品发布和量产进展线索"
+      ],
+      "source_event_ids": [
+        "hot_event_002"
+      ],
+      "roles": [
+        "机器人执行器候选观察公司"
+      ],
+      "reasons": [
+        "执行器和热管理链条相关"
+      ],
+      "risk_notes": [
+        "需关注机器人业务占比和客户验证"
+      ],
+      "in_watchlist": false,
+      "label": "candidate_watchlist",
+      "heat_score": 18.0,
+      "event_count": 1,
+      "max_impact_strength": "high",
+      "relevance_score_max": 4,
+      "relevance_score_avg": 4
+    },
+    {
+      "code": "002085",
+      "name": "万丰奥威",
+      "related_concepts": [
+        "商业航天",
+        "低空经济"
+      ],
+      "source_event_titles": [
+        "商业航天和低空经济政策试点热度提升"
+      ],
+      "source_event_ids": [
+        "hot_event_003"
+      ],
+      "roles": [
+        "低空飞行器候选观察公司"
+      ],
+      "reasons": [
+        "通航和低空飞行器相关"
+      ],
+      "risk_notes": [
+        "需关注业务占比、订单兑现和政策节奏"
+      ],
+      "in_watchlist": false,
+      "label": "candidate_watchlist",
+      "heat_score": 18.0,
+      "event_count": 1,
+      "max_impact_strength": "high",
+      "relevance_score_max": 4,
+      "relevance_score_avg": 4
+    },
+    {
+      "code": "002747",
+      "name": "埃斯顿",
+      "related_concepts": [
+        "机器人",
+        "固态电池"
+      ],
+      "source_event_titles": [
+        "机器人产业链出现新品发布和量产进展线索"
+      ],
+      "source_event_ids": [
+        "hot_event_002"
+      ],
+      "roles": [
+        "工业机器人候选观察公司"
+      ],
+      "reasons": [
+        "机器人本体和自动化相关"
+      ],
+      "risk_notes": [
+        "需关注行业资本开支和盈利修复"
+      ],
+      "in_watchlist": false,
+      "label": "candidate_watchlist",
+      "heat_score": 18.0,
+      "event_count": 1,
+      "max_impact_strength": "high",
+      "relevance_score_max": 4,
+      "relevance_score_avg": 4
+    },
+    {
+      "code": "002837",
+      "name": "英维克",
+      "related_concepts": [
+        "AI算力",
+        "光通信",
+        "数据中心"
+      ],
+      "source_event_titles": [
+        "AI算力与光通信需求升温，数据中心高速互连继续扩容"
+      ],
+      "source_event_ids": [
+        "hot_event_001"
+      ],
+      "roles": [
+        "温控和液冷候选观察公司"
+      ],
+      "reasons": [
+        "数据中心温控和液冷相关"
+      ],
+      "risk_notes": [
+        "需关注液冷渗透和订单兑现"
+      ],
+      "in_watchlist": false,
+      "label": "candidate_watchlist",
+      "heat_score": 18.0,
+      "event_count": 1,
+      "max_impact_strength": "high",
+      "relevance_score_max": 4,
+      "relevance_score_avg": 4
+    },
+    {
+      "code": "300394",
+      "name": "天孚通信",
+      "related_concepts": [
+        "AI算力",
+        "光通信",
+        "数据中心"
+      ],
+      "source_event_titles": [
+        "AI算力与光通信需求升温，数据中心高速互连继续扩容"
+      ],
+      "source_event_ids": [
+        "hot_event_001"
+      ],
+      "roles": [
+        "光器件候选观察公司"
+      ],
+      "reasons": [
+        "光器件和高速互连相关"
+      ],
+      "risk_notes": [
+        "需关注产品认证和订单兑现"
+      ],
+      "in_watchlist": false,
+      "label": "candidate_watchlist",
+      "heat_score": 18.0,
+      "event_count": 1,
+      "max_impact_strength": "high",
+      "relevance_score_max": 4,
+      "relevance_score_avg": 4
+    },
+    {
+      "code": "300442",
+      "name": "润泽科技",
+      "related_concepts": [
+        "AI算力",
+        "光通信",
+        "数据中心"
+      ],
+      "source_event_titles": [
+        "AI算力与光通信需求升温，数据中心高速互连继续扩容"
+      ],
+      "source_event_ids": [
+        "hot_event_001"
+      ],
+      "roles": [
+        "数据中心服务候选观察公司"
+      ],
+      "reasons": [
+        "数据中心和算力基础设施相关"
+      ],
+      "risk_notes": [
+        "需关注上架率、客户结构和资本开支"
+      ],
+      "in_watchlist": false,
+      "label": "candidate_watchlist",
+      "heat_score": 18.0,
+      "event_count": 1,
+      "max_impact_strength": "high",
+      "relevance_score_max": 4,
+      "relevance_score_avg": 4
+    },
+    {
+      "code": "300750",
+      "name": "宁德时代",
+      "related_concepts": [
+        "机器人",
+        "固态电池"
+      ],
+      "source_event_titles": [
+        "机器人产业链出现新品发布和量产进展线索"
+      ],
+      "source_event_ids": [
+        "hot_event_002"
+      ],
+      "roles": [
+        "电池技术路线候选观察公司"
+      ],
+      "reasons": [
+        "动力电池和新技术路线相关"
+      ],
+      "risk_notes": [
+        "需关注技术路线、资本开支和下游需求"
+      ],
+      "in_watchlist": false,
+      "label": "candidate_watchlist",
+      "heat_score": 18.0,
+      "event_count": 1,
+      "max_impact_strength": "high",
+      "relevance_score_max": 4,
+      "relevance_score_avg": 4
+    },
+    {
+      "code": "600118",
+      "name": "中国卫星",
+      "related_concepts": [
+        "商业航天",
+        "低空经济"
+      ],
+      "source_event_titles": [
+        "商业航天和低空经济政策试点热度提升"
+      ],
+      "source_event_ids": [
+        "hot_event_003"
+      ],
+      "roles": [
+        "卫星制造候选观察公司"
+      ],
+      "reasons": [
+        "卫星研制和航天产业链相关"
+      ],
+      "risk_notes": [
+        "需关注项目节奏和订单披露"
+      ],
+      "in_watchlist": false,
+      "label": "candidate_watchlist",
+      "heat_score": 18.0,
+      "event_count": 1,
+      "max_impact_strength": "high",
+      "relevance_score_max": 4,
+      "relevance_score_avg": 4
+    },
+    {
+      "code": "688256",
+      "name": "寒武纪",
+      "related_concepts": [
+        "AI算力",
+        "光通信",
+        "数据中心"
+      ],
+      "source_event_titles": [
+        "AI算力与光通信需求升温，数据中心高速互连继续扩容"
+      ],
+      "source_event_ids": [
+        "hot_event_001"
+      ],
+      "roles": [
+        "AI芯片候选观察公司"
+      ],
+      "reasons": [
+        "AI芯片和智能计算相关"
+      ],
+      "risk_notes": [
+        "需关注研发投入、客户验证和盈利兑现节奏"
+      ],
+      "in_watchlist": false,
+      "label": "candidate_watchlist",
+      "heat_score": 18.0,
+      "event_count": 1,
+      "max_impact_strength": "high",
+      "relevance_score_max": 4,
+      "relevance_score_avg": 4
+    },
+    {
+      "code": "002074",
+      "name": "国轩高科",
+      "related_concepts": [
+        "机器人",
+        "固态电池"
+      ],
+      "source_event_titles": [
+        "机器人产业链出现新品发布和量产进展线索"
+      ],
+      "source_event_ids": [
+        "hot_event_002"
+      ],
+      "roles": [
+        "电池制造候选观察公司"
+      ],
+      "reasons": [
+        "电池制造和固态电池研发相关"
+      ],
+      "risk_notes": [
+        "需关注量产节奏和盈利能力"
+      ],
+      "in_watchlist": false,
+      "label": "candidate_watchlist",
+      "heat_score": 15.5,
+      "event_count": 1,
+      "max_impact_strength": "high",
+      "relevance_score_max": 3,
+      "relevance_score_avg": 3
+    },
+    {
+      "code": "002465",
+      "name": "海格通信",
+      "related_concepts": [
+        "商业航天",
+        "低空经济"
+      ],
+      "source_event_titles": [
+        "商业航天和低空经济政策试点热度提升"
+      ],
+      "source_event_ids": [
+        "hot_event_003"
+      ],
+      "roles": [
+        "卫星通信候选观察公司"
+      ],
+      "reasons": [
+        "通信和北斗应用相关"
+      ],
+      "risk_notes": [
+        "需关注项目交付和需求兑现"
+      ],
+      "in_watchlist": false,
+      "label": "candidate_watchlist",
+      "heat_score": 15.5,
+      "event_count": 1,
+      "max_impact_strength": "high",
+      "relevance_score_max": 3,
+      "relevance_score_avg": 3
+    },
+    {
+      "code": "300073",
+      "name": "当升科技",
+      "related_concepts": [
+        "机器人",
+        "固态电池"
+      ],
+      "source_event_titles": [
+        "机器人产业链出现新品发布和量产进展线索"
+      ],
+      "source_event_ids": [
+        "hot_event_002"
+      ],
+      "roles": [
+        "电池材料候选观察公司"
+      ],
+      "reasons": [
+        "锂电材料相关"
+      ],
+      "risk_notes": [
+        "需关注材料价格和客户需求"
+      ],
+      "in_watchlist": false,
+      "label": "candidate_watchlist",
+      "heat_score": 15.5,
+      "event_count": 1,
+      "max_impact_strength": "high",
+      "relevance_score_max": 3,
+      "relevance_score_avg": 3
+    },
+    {
+      "code": "300474",
+      "name": "景嘉微",
+      "related_concepts": [
+        "商业航天",
+        "低空经济"
+      ],
+      "source_event_titles": [
+        "商业航天和低空经济政策试点热度提升"
+      ],
+      "source_event_ids": [
+        "hot_event_003"
+      ],
+      "roles": [
+        "航天电子候选观察公司"
+      ],
+      "reasons": [
+        "图形处理和航天电子相关"
+      ],
+      "risk_notes": [
+        "需关注产品验证和需求波动"
+      ],
+      "in_watchlist": false,
+      "label": "candidate_watchlist",
+      "heat_score": 15.5,
+      "event_count": 1,
+      "max_impact_strength": "high",
+      "relevance_score_max": 3,
+      "relevance_score_avg": 3
+    },
+    {
+      "code": "600038",
+      "name": "中直股份",
+      "related_concepts": [
+        "商业航天",
+        "低空经济"
+      ],
+      "source_event_titles": [
+        "商业航天和低空经济政策试点热度提升"
+      ],
+      "source_event_ids": [
+        "hot_event_003"
+      ],
+      "roles": [
+        "航空装备候选观察公司"
+      ],
+      "reasons": [
+        "航空装备制造相关"
+      ],
+      "risk_notes": [
+        "需关注订单节奏和产业政策变化"
+      ],
+      "in_watchlist": false,
+      "label": "candidate_watchlist",
+      "heat_score": 15.5,
+      "event_count": 1,
+      "max_impact_strength": "high",
+      "relevance_score_max": 3,
+      "relevance_score_avg": 3
+    },
+    {
+      "code": "603881",
+      "name": "数据港",
+      "related_concepts": [
+        "AI算力",
+        "光通信",
+        "数据中心"
+      ],
+      "source_event_titles": [
+        "AI算力与光通信需求升温，数据中心高速互连继续扩容"
+      ],
+      "source_event_ids": [
+        "hot_event_001"
+      ],
+      "roles": [
+        "IDC候选观察公司"
+      ],
+      "reasons": [
+        "数据中心运营相关"
+      ],
+      "risk_notes": [
+        "需关注客户集中度和项目回报周期"
+      ],
+      "in_watchlist": false,
+      "label": "candidate_watchlist",
+      "heat_score": 15.5,
+      "event_count": 1,
+      "max_impact_strength": "high",
+      "relevance_score_max": 3,
+      "relevance_score_avg": 3
+    },
+    {
+      "code": "600760",
+      "name": "中航沈飞",
+      "related_concepts": [
+        "军工"
+      ],
+      "source_event_titles": [
+        "德国派遣舰艇以备霍尔木兹海峡扫雷任务"
+      ],
+      "source_event_ids": [
+        "hot_event_006"
+      ],
+      "roles": [
+        "航空装备候选观察公司"
+      ],
+      "reasons": [
+        "航空装备制造相关"
+      ],
+      "risk_notes": [
+        "需关注交付节奏和订单披露"
+      ],
+      "in_watchlist": false,
+      "label": "candidate_watchlist",
+      "heat_score": 15.0,
+      "event_count": 1,
+      "max_impact_strength": "medium",
+      "relevance_score_max": 4,
+      "relevance_score_avg": 4
+    },
+    {
+      "code": "600893",
+      "name": "航发动力",
+      "related_concepts": [
+        "军工"
+      ],
+      "source_event_titles": [
+        "德国派遣舰艇以备霍尔木兹海峡扫雷任务"
+      ],
+      "source_event_ids": [
+        "hot_event_006"
+      ],
+      "roles": [
+        "航空发动机候选观察公司"
+      ],
+      "reasons": [
+        "航空发动机产业链相关"
+      ],
+      "risk_notes": [
+        "需关注研发交付和盈利节奏"
+      ],
+      "in_watchlist": false,
+      "label": "candidate_watchlist",
+      "heat_score": 15.0,
+      "event_count": 1,
+      "max_impact_strength": "medium",
+      "relevance_score_max": 4,
+      "relevance_score_avg": 4
+    }
+  ],
+  "warnings": [],
+  "disclaimer": "候选观察股仅用于热点研究辅助，不构成投资建议、交易建议或交易信号，不承诺任何回报。"
+}
