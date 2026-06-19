@@ -1,0 +1,94 @@
+{
+  "version": "mvp5_v1",
+  "description": "User stock screening preferences for candidate review. Research assistance only.",
+  "preferred_themes_strong": [
+    "AI硬件",
+    "半导体设备",
+    "半导体材料",
+    "半导体新材料",
+    "国产替代",
+    "先进封装",
+    "PCB",
+    "光模块",
+    "CPO",
+    "高速铜缆",
+    "连接器",
+    "算力硬件",
+    "存储",
+    "服务器电源",
+    "液冷"
+  ],
+  "preferred_themes_watch": [
+    "稀土",
+    "小金属",
+    "战略资源",
+    "涨价逻辑",
+    "卡脖子材料",
+    "先进制造上游",
+    "半导体上游材料",
+    "高端化工材料",
+    "化工产品"
+  ],
+  "neutral_or_disabled_themes": [
+    "机器人"
+  ],
+  "blocked_or_downrank_themes": [
+    "医药",
+    "消费",
+    "地产",
+    "金融",
+    "银行",
+    "保险",
+    "券商",
+    "白酒",
+    "食品饮料",
+    "低空经济",
+    "游戏",
+    "传媒游戏",
+    "传统老登股",
+    "纯概念炒作"
+  ],
+  "preferred_stock_styles": [
+    "真核心龙头",
+    "短线情绪风向标",
+    "龙头中军",
+    "弹性小票",
+    "趋势上升"
+  ],
+  "hard_filters": {
+    "exclude_bj_market": true,
+    "exclude_st": true,
+    "exclude_new_listing": false,
+    "exclude_overheated": false
+  },
+  "overheated_policy": {
+    "mode": "keep_as_market_height",
+    "label": "market_height_watch",
+    "risk_note": "短线过热标的仅作为市场高度和情绪风向观察，需要标记高波动风险。"
+  },
+  "review_limits": {
+    "daily_review_limit": 5,
+    "initial_bucket_quota": {
+      "core_midcap": 2,
+      "elastic_sentiment": 2,
+      "trend_reserve": 1
+    },
+    "future_sector_quota": 5
+  },
+  "weights": {
+    "hotspot_weight": 0.5,
+    "trend_weight": 0.5,
+    "preference_weight": 0.5,
+    "risk_penalty_weight": 0.3
+  },
+  "watchlist_sync": {
+    "mode": "manual_confirm",
+    "auto_sync_to_watchlist": false
+  },
+  "forbidden_actions": [
+    "auto_trading",
+    "directional_operation_advice",
+    "target_price_output",
+    "return_forecast"
+  ]
+}

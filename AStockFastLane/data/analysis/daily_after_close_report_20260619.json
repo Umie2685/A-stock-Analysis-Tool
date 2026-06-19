@@ -1,0 +1,285 @@
+{
+  "meta": {
+    "label": "daily_after_close_report",
+    "method": "rule_based",
+    "created_at": "2026-06-19T23:16:59+08:00",
+    "disclaimer": "研究辅助，不构成投资建议。",
+    "input_files": [
+      "data/analysis/hot_events_latest.json",
+      "data/analysis/candidate_watchlist_latest.json",
+      "data/analysis/trend_analysis_latest.json",
+      "data/analysis/candidate_review_latest.json",
+      "data/manual/candidate_review_status.json"
+    ]
+  },
+  "market_summary": {
+    "hot_event_count": 14,
+    "candidate_count": 25,
+    "trend_item_count": 20,
+    "candidate_review_count": 25,
+    "selected_review_count": 4
+  },
+  "hot_mainlines": [
+    {
+      "title": "AI算力与光通信需求升温，数据中心高速互连继续扩容",
+      "impact_strength": "high",
+      "impact_score": 14,
+      "related_concepts": [
+        "AI算力",
+        "光通信",
+        "数据中心"
+      ],
+      "risk_notes": [
+        "算力主题覆盖链条较长，需要区分真实业务暴露和概念关联",
+        "单一热点不代表公司业绩兑现",
+        "光模块迭代快，需关注产品结构和客户集中度",
+        "海外需求波动可能放大估值波动",
+        "数据中心项目投入大，回报周期和利用率需要跟踪",
+        "液冷等技术路线仍有项目差异"
+      ]
+    },
+    {
+      "title": "机器人产业链出现新品发布和量产进展线索",
+      "impact_strength": "high",
+      "impact_score": 14,
+      "related_concepts": [
+        "机器人",
+        "固态电池"
+      ],
+      "risk_notes": [
+        "概念热度可能先于业绩兑现",
+        "不同零部件环节的受益程度差异较大",
+        "固态电池产业化节奏存在不确定性",
+        "技术新闻不等于商业化订单"
+      ]
+    },
+    {
+      "title": "商业航天和低空经济政策试点热度提升",
+      "impact_strength": "high",
+      "impact_score": 13,
+      "related_concepts": [
+        "商业航天",
+        "低空经济"
+      ],
+      "risk_notes": [
+        "商业航天仍处于建设和验证阶段，商业模式兑现节奏需观察",
+        "项目进度和订单披露可能不连续",
+        "低空经济仍处于场景验证和监管完善阶段",
+        "产业链兑现节奏可能分化"
+      ]
+    },
+    {
+      "title": "有色金属资源品价格波动带动周期线索",
+      "impact_strength": "high",
+      "impact_score": 7,
+      "related_concepts": [
+        "有色金属"
+      ],
+      "risk_notes": [
+        "资源品价格波动较大，相关公司盈利对价格敏感",
+        "周期波动可能显著影响估值"
+      ]
+    },
+    {
+      "title": "LME期铜收跌124美元",
+      "impact_strength": "medium",
+      "impact_score": 4,
+      "related_concepts": [
+        "有色金属"
+      ],
+      "risk_notes": [
+        "资源品价格波动较大，相关公司盈利对价格敏感",
+        "周期波动可能显著影响估值"
+      ]
+    },
+    {
+      "title": "德国派遣舰艇以备霍尔木兹海峡扫雷任务",
+      "impact_strength": "medium",
+      "impact_score": 3,
+      "related_concepts": [
+        "军工"
+      ],
+      "risk_notes": [
+        "军工订单和交付节奏披露有限",
+        "主题热度需要结合公告和财务数据验证"
+      ]
+    }
+  ],
+  "selected_candidates": [
+    {
+      "code": "300502",
+      "name": "新易盛",
+      "market": "SZ",
+      "review_bucket": "core_watch",
+      "final_score": 27.75,
+      "trend_state": "recovering",
+      "bucket_reason": "命中强偏好主题，热点分较高，趋势状态不差，且角色更接近核心或中军。",
+      "manual_status": "pending",
+      "confirmed_by_user": false,
+      "review_note": "-",
+      "status_updated_at": "-"
+    },
+    {
+      "code": "000977",
+      "name": "浪潮信息",
+      "market": "SZ",
+      "review_bucket": "core_watch",
+      "final_score": 26.5,
+      "trend_state": "recovering",
+      "bucket_reason": "命中强偏好主题，热点分较高，趋势状态不差，且角色更接近核心或中军。",
+      "manual_status": "pending",
+      "confirmed_by_user": false,
+      "review_note": "-",
+      "status_updated_at": "-"
+    },
+    {
+      "code": "002837",
+      "name": "英维克",
+      "market": "SZ",
+      "review_bucket": "elastic_watch",
+      "final_score": 26.5,
+      "trend_state": "recovering",
+      "bucket_reason": "命中强偏好主题，热点分较高，适合先放入弹性审核。",
+      "manual_status": "pending",
+      "confirmed_by_user": false,
+      "review_note": "-",
+      "status_updated_at": "-"
+    },
+    {
+      "code": "300442",
+      "name": "润泽科技",
+      "market": "SZ",
+      "review_bucket": "elastic_watch",
+      "final_score": 26.5,
+      "trend_state": "recovering",
+      "bucket_reason": "命中强偏好主题，热点分较高，适合先放入弹性审核。",
+      "manual_status": "pending",
+      "confirmed_by_user": false,
+      "review_note": "-",
+      "status_updated_at": "-"
+    }
+  ],
+  "manual_status_summary": {
+    "pending": 4,
+    "watch": 0,
+    "skip": 0,
+    "confirmed": 0,
+    "rejected": 0
+  },
+  "watch_items": [],
+  "confirmed_items": [],
+  "rejected_items": [],
+  "wind_vane_table": [
+    {
+      "code": "300502",
+      "name": "新易盛",
+      "layer": "core_watch",
+      "trend_state": "recovering",
+      "manual_status": "pending",
+      "focus_reason": "命中强偏好主题，热点分较高，趋势状态不差，且角色更接近核心或中军。"
+    },
+    {
+      "code": "000977",
+      "name": "浪潮信息",
+      "layer": "core_watch",
+      "trend_state": "recovering",
+      "manual_status": "pending",
+      "focus_reason": "命中强偏好主题，热点分较高，趋势状态不差，且角色更接近核心或中军。"
+    },
+    {
+      "code": "300308",
+      "name": "中际旭创",
+      "layer": "core_watch",
+      "trend_state": "sideways",
+      "manual_status": "pending",
+      "focus_reason": "命中强偏好主题，热点分较高，趋势状态不差，且角色更接近核心或中军。"
+    },
+    {
+      "code": "002837",
+      "name": "英维克",
+      "layer": "elastic_watch",
+      "trend_state": "recovering",
+      "manual_status": "pending",
+      "focus_reason": "命中强偏好主题，热点分较高，适合先放入弹性审核。"
+    },
+    {
+      "code": "300442",
+      "name": "润泽科技",
+      "layer": "elastic_watch",
+      "trend_state": "recovering",
+      "manual_status": "pending",
+      "focus_reason": "命中强偏好主题，热点分较高，适合先放入弹性审核。"
+    },
+    {
+      "code": "603799",
+      "name": "华友钴业",
+      "layer": "elastic_watch",
+      "trend_state": "recovering",
+      "manual_status": "pending",
+      "focus_reason": "命中强偏好或保留关注主题，热点弹性较强，风险字段需要同步审核。"
+    },
+    {
+      "code": "300073",
+      "name": "当升科技",
+      "layer": "elastic_watch",
+      "trend_state": "recovering",
+      "manual_status": "pending",
+      "focus_reason": "命中强偏好或保留关注主题，热点弹性较强，风险字段需要同步审核。"
+    },
+    {
+      "code": "600111",
+      "name": "北方稀土",
+      "layer": "elastic_watch",
+      "trend_state": "sideways",
+      "manual_status": "pending",
+      "focus_reason": "命中强偏好或保留关注主题，热点弹性较强，风险字段需要同步审核。"
+    },
+    {
+      "code": "300394",
+      "name": "天孚通信",
+      "layer": "elastic_watch",
+      "trend_state": "weakening",
+      "manual_status": "pending",
+      "focus_reason": "命中强偏好或保留关注主题，热点弹性较强，风险字段需要同步审核。"
+    },
+    {
+      "code": "601899",
+      "name": "紫金矿业",
+      "layer": "elastic_watch",
+      "trend_state": "weakening",
+      "manual_status": "pending",
+      "focus_reason": "命中强偏好或保留关注主题，热点弹性较强，风险字段需要同步审核。"
+    },
+    {
+      "code": "002179",
+      "name": "中航光电",
+      "layer": "elastic_watch",
+      "trend_state": "sideways",
+      "manual_status": "pending",
+      "focus_reason": "命中强偏好主题，热点分较高，适合先放入弹性审核。"
+    },
+    {
+      "code": "688256",
+      "name": "寒武纪",
+      "layer": "market_height_watch",
+      "trend_state": "overheated",
+      "manual_status": "pending",
+      "focus_reason": "趋势状态为 overheated，按市场高度和情绪风向观察处理。"
+    }
+  ],
+  "tomorrow_watch": [
+    "跟踪主线热度是否延续：AI算力与光通信需求升温，数据中心高速互连继续扩容。",
+    "跟踪主线热度是否延续：机器人产业链出现新品发布和量产进展线索。",
+    "跟踪主线热度是否延续：商业航天和低空经济政策试点热度提升。",
+    "人工确认 新易盛(300502) 的状态与风险备注，当前状态为 pending。",
+    "人工确认 浪潮信息(000977) 的状态与风险备注，当前状态为 pending。",
+    "人工确认 英维克(002837) 的状态与风险备注，当前状态为 pending。",
+    "保持规则版记录，不自动写入 watchlist。"
+  ],
+  "risk_notes": [
+    "本报告仅整理公开信息和本地规则结果。",
+    "人工状态需要用户自行确认，状态缺失时按 pending 展示。",
+    "热点、趋势与候选池均可能随数据刷新而变化。"
+  ],
+  "errors": []
+}
